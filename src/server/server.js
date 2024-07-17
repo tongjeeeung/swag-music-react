@@ -52,7 +52,7 @@ app.use(cors({
 
 // Настройка статической директории
 const __dirname = path.resolve();
-app.use('/static', express.static(path.join(__dirname, 'public/static')));
+app.use('/static', express.static(path.join(__dirname, '/swag-music-react/static')));
 
 // Эндпоинт для регистрации пользователя
 app.post('/user/register', async (req, res) => {
