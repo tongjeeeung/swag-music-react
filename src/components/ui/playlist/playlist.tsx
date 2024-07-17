@@ -6,7 +6,7 @@ import shuffleSvg from '../../../assets/svg/shuffle.svg';
 export const PlaylistUI: FC<TPlaylist> = ({ name, executor, image, information, isAdd, isShuffle, children, addPlaylistHandle, shuffleHandle, isOwner, changeHandle }) => (
     <div className={styles.playlist_content}>
       <div className={styles.playlist_header}>
-        <img className={styles.playlist_image} src={image} alt="" />
+        <img className={styles.playlist_image} src={typeof image === 'string' ? image : ''} alt="" />
         <div className={styles.playlist_header_information}>
           <h2 className={styles.playlist_title}>{name}</h2>
           <h3 className={styles.playlist_executor}>{executor}</h3>

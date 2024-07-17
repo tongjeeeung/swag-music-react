@@ -11,7 +11,7 @@ export const PlayListListUI: FC<TPlayListList> = ({ title, children, locationSta
     <ul className={styles.playlist_list}>
       {children.length > 0 ? (children.map((item) => (
       <Link to={`/playlists/${item._id}`} key={item._id} state={locationState} style={{ textDecoration: 'none', color: "inherit" }}>
-        <PlaylistItemUI name={item.name} executor={item.executor} image={item.image} key={item._id} id={item._id}></PlaylistItemUI>
+        <PlaylistItemUI name={item.name} executor={item.executor} image={typeof item.image === 'string' ? item.image : ''} key={item._id} id={item._id}></PlaylistItemUI>
       </Link>
       ))) : (<h2 className={styles.playlists_nothing}>No added albums</h2>)}
     </ul>

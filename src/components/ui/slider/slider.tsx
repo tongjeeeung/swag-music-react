@@ -47,7 +47,7 @@ export const SliderUI: FC<{sliderVoid (arg: HTMLUListElement): void, items: TPla
             </div>
             <div className={styles.position}>
               <Link to={`/playlists/${playlist._id}`} state={{ background: location }} className={styles.album} style={{ color: "inherit", textDecoration: 'none' }}>
-                <img className={styles.album_img} src={playlist.image} alt={playlist.name} />
+                <img className={styles.album_img} src={typeof playlist.image === 'string' ? playlist.image : ''} alt={playlist.name} />
                 <div className={styles.album_info}>
                   <h4 className={styles.album_name}>{playlist.name}</h4>
                   <h5 className={styles.album_executor}>{playlist.executor}</h5>

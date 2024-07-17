@@ -102,7 +102,7 @@ export const BlogUI: FC<TBlogUIProps> = ({ children }) => {
       </Link>
     </ul>
     <ul className={styles.rand}>
-    {children.map((article, index) => {
+    {children.map((_article, index) => {
         if (index < 3 && randArr.length > 0) {
           return (
           <Link to={`/blog/${children[randArr[index]]._id}`} key={children[randArr[index]]._id} style={{ textDecoration: 'none', color: "inherit" }}>

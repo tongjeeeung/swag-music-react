@@ -46,7 +46,7 @@ export const ExecutorUI: FC<ExecutorUIProps> = ({executor, playlists, tracks, ex
         <ul className={styles.list}>
           {playlists.map((playlist) => {
             return (<Link to={`/playlists/${playlist._id}`} state={{background: location}} style={{color: 'inherit', textDecoration: "none"}}>
-              <PlaylistItemUI name={playlist.name} executor={playlist.executor} image={playlist.image} id={playlist._id}></PlaylistItemUI>
+              <PlaylistItemUI name={playlist.name} executor={playlist.executor} image={typeof playlist.image === 'string' ? playlist.image : ''} id={playlist._id}></PlaylistItemUI>
             </Link>)
           })}
         </ul>

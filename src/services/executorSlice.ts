@@ -2,7 +2,9 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { TArtist } from "../utils/types";
 import { getAllExecutors, getExecutorById } from "../utils/api";
 
-export const getArtistsThunk = createAsyncThunk('executor/getArtistsApi', await getAllExecutors)
+export const getArtistsThunk = createAsyncThunk('executor/getArtistsApi', async () => {
+  return await getAllExecutors();
+});
 
 export const getArtistThunk = createAsyncThunk('executor/getArtistApi', 
   async (id: string) => {

@@ -2,7 +2,9 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { TPlaylist, TTrack } from "../utils/types";
 import { getPopularApi } from "../utils/api";
 
-export const getPopularThunk = createAsyncThunk('popular/getPopularTracksApi', await getPopularApi);
+export const getPopularThunk = createAsyncThunk('popular/getPopularTracksApi', async () => {
+  return await getPopularApi();
+});
 
 export interface PlaylistsState {
   isLoading: boolean;

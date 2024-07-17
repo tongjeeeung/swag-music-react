@@ -2,7 +2,9 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { TBlog } from "../utils/types";
 import { getArticleById, getArticlesApi } from "../utils/api";
 
-export const getArticlesThunk = createAsyncThunk('blog/getUserApi', await getArticlesApi)
+export const getArticlesThunk = createAsyncThunk('blog/getUserApi', async () => {
+  return await getArticlesApi();
+});
 
 export const getArticleThunk = createAsyncThunk('blog/getArticleApi', 
   async (id: string) => {
