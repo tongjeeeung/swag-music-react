@@ -6,4 +6,8 @@ export default defineConfig({
   esbuild: {
     target: 'esnext',
   },
+  build: {
+    outDir: 'dist',
+  },
+  base: '/swag-music-react/',
 });
