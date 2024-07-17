@@ -7,7 +7,7 @@ const jesus = {
   about: 'Vladislav Dmitrievich Kozikhov, known by his stage name Dzhizus, is a Russian musician, singer, and songwriter. Born on October 9, 1994, he is recognized for his unique blend of hip-hop, electronic, and rock music. His emotionally charged lyrics often explore themes of love, loss, self-discovery, and social issues. Dzhizus gained popularity in the late 2010s and continues to be an influential figure in contemporary music.',
   playlists: [{
     name: 'Не пара',
-    image: '/public/swag-music-react/static/images/executors/jezus/album1.jpg',
+    image: '/swag-music-react/static/images/executors/jezus/album1.jpg',
     information: 'The track "Не пара" by Джизус (Jeezus) is one of his popular works. In this song, the artist explores themes of love, disappointment, and incompatibility in relationships. The lyrics are filled with emotional experiences and personal reflections, making it relatable and understandable to many listeners.',
     tracks: [{
       name: 'Не пара',
