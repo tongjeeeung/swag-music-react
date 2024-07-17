@@ -8,7 +8,7 @@ import nextSvg from '../../../../public/static/svg/next.svg';
 import repeatSvg from '../../../../public/static/svg/repeat.svg';
 import volumeSvg from '../../../../public/static/svg/volume.svg';
 import volumeSvgMin from '../../../../public/static/svg/volume_min.svg';
-import volumeSvgMute from '../../../../public/static/svg/mute.svg';
+import volumeSvgMute from '../../../../public/static/svg/volume_mute.svg';
 import { TControler } from "./type";
 import { Link } from "react-router-dom";
 
