@@ -9,6 +9,9 @@ import { Blog, Playlist, Artist, User } from './models.js';
 import path from 'path';
 import { v4 as uuidv4 } from 'uuid';
 import multer from "multer";
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const app = express();
 const port = 3000;
@@ -49,7 +52,7 @@ app.use(cors({
 
 // Настройка статической директории
 const __dirname = path.resolve();
-app.use('/static', express.static(path.join(__dirname, '/static')));
+app.use('/static', express.static(path.join(__dirname, 'public/static')));
 
 // Эндпоинт для регистрации пользователя
 app.post('/user/register', async (req, res) => {
@@ -703,13 +706,15 @@ app.delete('/blog/clear', async (req, res) => {
   }
 });
 
+//const MONGODB_URL = "mongodb+srv://tongjeeeung:<password>@swag-music.wpw2inx.mongodb.net/?retryWrites=true&w=majority&appName=swag-music"
+
 // Подключение к базе данных и запуск сервера
-mongoose.connect('mongodb://localhost:27017/musicapp')
+mongoose.connect(process.env.MONGODB_URL)
   .then(() => {
     console.log('Подключено к базе данных');
     initializeDatabase();
     app.listen(port, () => {
-      console.log(`Сервер запущен на http://localhost:${port}`);
+      console.log(`Сервер запущен на ${process.env.MONGODB_URL}`);
     });
   })
   .catch(error => {
