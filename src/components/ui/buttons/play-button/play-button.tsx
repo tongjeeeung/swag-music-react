@@ -1,7 +1,7 @@
 import { FC, MouseEventHandler } from "react";
 import styles from './play-button.module.css';
-import playSvg from '../../../../assets/svg/play.svg';
-import pauseSvg from '../../../../assets/svg/pause.svg';
+import playSvg from '../../../../../public/static/svg/play.svg'
+import pauseSvg from '../../../../../public/static/svg/pause.svg'
 
 export const PlayButton: FC<{playVoid: MouseEventHandler, isPlaying: boolean}> = ({ playVoid, isPlaying }) => {
   return <>

@@ -3,12 +3,12 @@ import styles from './controler.module.css';
 import { LikeButton, PlayButton } from "../buttons";
 import clsx from "clsx";
 
-import shuffleSvg from '../../../assets/svg/shuffle.svg';
-import nextSvg from '../../../assets/svg/next.svg';
-import repeatSvg from '../../../assets/svg/repeat.svg';
-import volumeSvg from '../../../assets/svg/volume.svg';
-import volumeSvgMin from '../../../assets/svg/volume_min.svg';
-import volumeSvgMute from '../../../assets/svg/volume_mute.svg';
+import shuffleSvg from '../../../../public/static/svg/shuffle.svg'
+import nextSvg from '../../../../public/static/svg/next.svg';
+import repeatSvg from '../../../../public/static/svg/repeat.svg';
+import volumeSvg from '../../../../public/static/svg/volume.svg';
+import volumeSvgMin from '../../../../public/static/svg/volume_min.svg';
+import volumeSvgMute from '../../../../public/static/svg/mute.svg';
 import { TControler } from "./type";
 import { Link } from "react-router-dom";
 

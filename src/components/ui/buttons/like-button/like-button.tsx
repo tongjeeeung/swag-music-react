@@ -1,6 +1,6 @@
 import { FC, MouseEventHandler } from "react";
 import styles from './like-button.module.css';
-import likeSvg from '../../../../assets/svg/heart.svg';
+import likeSvg from '../../../../../public/static/svg/heart.svg';
 import clsx from "clsx";
 
 export const LikeButton: FC<{likeVoid: MouseEventHandler, isLike: boolean}> = ({ likeVoid, isLike }) => (
