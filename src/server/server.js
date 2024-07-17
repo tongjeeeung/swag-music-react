@@ -30,7 +30,7 @@ app.use(bodyParser.json());
 
 const allowedOrigins = [
   'http://localhost:5173',
-  'https://tongjeeeung.github.io'
+  'https://tongjeeeung.github.io/swag-music-react'
 ];
 
 // Используем middleware cors
