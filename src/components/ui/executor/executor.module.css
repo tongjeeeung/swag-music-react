@@ -1,0 +1,148 @@
+.executor {
+  display: flex;
+  flex-direction: column;
+  gap: 2%;
+}
+
+.logo {
+  block-size: 80vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.img {
+  inline-size: 100%;
+  block-size: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  filter: brightness(50%) sepia(10%);
+  object-fit: cover;
+  object-position: center;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  z-index: 1;
+  bottom: 4%;
+  left: 2%;
+}
+
+.name {
+  font-size: 8vw;
+  font-weight: bold;
+  margin-top: 2%;
+  margin-bottom: 50px;
+}
+
+.title {
+  inline-size: 58vw;
+  font-size: 34px;
+  font-weight: 100;
+  overflow: hidden;
+  text-wrap: nowrap;
+  text-overflow: ellipsis;
+  color: var(--muted-color);
+  margin: 0 0 6% 0;
+}
+
+.button {
+  color: var(--text-color);
+  border: 1px solid var(--text-color);
+  background-color: inherit;
+  inline-size: 15vw;
+  block-size: 6vh;
+  transition: all ease 0.5s;
+  cursor: pointer;
+}
+
+.button:hover {
+  text-shadow: 1px 1px 0 var(--shadow-color);
+  border: 1px solid var(--accent-color);
+  transition: all ease 0.5s;
+}
+
+.tracks {
+  padding: 2%;
+}
+
+.tracks_list {
+  display: flex;
+  flex-direction: column;
+}
+
+.section_name {
+  font-size: 33px;
+  font-weight: lighter;
+  margin-bottom: 2%;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  gap: 2%;
+  padding: 0;
+  margin: 0;
+  overflow: scroll;
+}
+
+.more {
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--muted-color);
+  background-color: inherit;
+  border: none;
+  transition: color 0.3s ease-in-out;
+}
+
+.more:hover {
+  color: var(--text-color);
+  transition: color 0.3s ease-in-out;
+}
+
+.playlists {
+  padding: 2%;
+}
+
+.other {
+  padding: 2%;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  padding: 1%;
+  transition: color 0.5s ease-in-out;
+}
+
+.item:hover {
+  color: var(--accent-color);
+  transition: color 0.5s ease-in-out;
+}
+
+.other_image {
+  inline-size: 200px;
+  object-fit: cover;
+  object-position: center;
+  block-size: 200px;
+  border-radius: 50%;
+  margin-bottom: 4%;
+}
+
+.other_name {
+  font-size: 22px;
+  font-weight: 600;
+  overflow: hidden;
+  text-wrap: nowrap;
+  text-overflow: ellipsis;
+  margin-bottom: 2%;
+}
+
+.other_subtitle {
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--muted-color);
+}

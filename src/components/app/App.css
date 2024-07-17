@@ -1,0 +1,5 @@
+main {
+  background-color: var(--page-bg-color);
+  color: var(--text-color);
+  font-size: clamp(0.875rem, 0.589rem + 1.221vw, 1.688rem);
+}

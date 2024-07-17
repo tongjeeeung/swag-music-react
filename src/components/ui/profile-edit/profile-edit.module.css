@@ -1,0 +1,59 @@
+.button {
+  border: 1px solid;
+  background-color: inherit;
+  color: var(--text-color);
+  inline-size: 100%;
+  block-size: 30px;
+  font-size: 14px;
+  transition: all ease 0.5s;
+  cursor: pointer;
+}
+
+.button:hover {
+  text-shadow: 1px 1px 0 var(--shadow-color);
+  border: 1px solid var(--accent-color);
+  transition: all ease 0.5s;
+}
+
+.form {
+  padding-bottom: 2%;
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.label {
+  font-size: 16px;
+  font-weight: 100;
+}
+
+.input {
+  inline-size: 98.5%;
+  height: 3vh;
+  font-size: 16px;
+  background-color: var(--page-bg-color);
+  border: 1px solid var(--text-color);
+  color: var(--text-color);
+  margin-bottom: 4%;
+  transition: border 0.3s ease-in;
+}
+
+.input:hover {
+  border: 1px solid var(--accent-color);
+  transition: border 0.3s ease-in;
+}
+
+.input:focus {
+  outline: none;
+  border: 1px solid var(--accent-color);
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: 5000s ease-in-out 0s;
+    color: var(--text-color);
+}

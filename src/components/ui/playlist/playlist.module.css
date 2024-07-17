@@ -1,0 +1,136 @@
+.playlist_content {
+  margin: 10px 0;
+  max-width: 60%;
+  width: 100%;
+  min-height: 98%;
+  background-color: var(--page-bg-color);
+  border-radius: 10px;
+  position: relative;
+  box-sizing: border-box;
+  padding: 24px 26px;
+  color: var(--text-color);
+}
+
+.playlist_header {
+  max-block-size: 220px;
+  display: flex;
+  gap: 2%;
+  position: relative;
+}
+
+.playlist_image {
+  width: 220px;
+  height: 220px;
+  object-fit: fill;
+  object-position: center;
+}
+
+.playlist_header_information {
+  padding-block: 1%;
+  padding-inline-end: 1%;
+}
+
+.playlist_title {
+  margin-block: 2%;
+  font-size: clamp(0.875rem, 0.743rem + 0.563vw, 1.25rem);
+}
+
+.playlist_executor {
+  cursor: pointer;
+  font-weight: 100;
+  color: var(--muted-color);
+  font-size: clamp(0.688rem, 0.621rem + 0.282vw, 0.875rem);
+}
+
+.playlist_header_information_about {
+  font-size: 14px;
+}
+
+.playlist_button_add {
+  position: absolute;
+  bottom: 2%;
+  right: 2%;
+  border: 1px solid;
+  background-color: inherit;
+  color: var(--text-color);
+  inline-size: 80px;
+  block-size: 30px;
+  font-size: 14px;
+  transition: all ease 0.5s;
+  cursor: pointer;
+}
+
+.playlist_button_add:hover {
+  text-shadow: 1px 1px 0 var(--shadow-color);
+  border: 1px solid var(--accent-color);
+  transition: all ease 0.5s;
+}
+
+.playlist_shuffle_button {
+  margin-block: 2%;
+  inline-size: 100%;
+  block-size: 7vh;
+  background-color: transparent;
+  border: none;
+  text-align: start;
+  color: var(--text-color);
+  font-family: 'Caveat';
+  font-size: 32px;
+  display: flex;
+  align-items: center;
+  gap: 1%;
+  padding: 0;
+}
+
+.playlist_shuffle_button:hover {
+  background-color: var(--menu-btn-color);
+  transition: all ease 0.5s;
+}
+
+.playlist_shuffle_svg {
+  width: 28px;
+  height: 28px;
+  fill: var(--text-color);
+  transition: ease 0.5s;
+}
+
+.playlist_shuffle_active {
+  fill: var(--accent-color);
+  transition: ease 0.5s;
+}
+
+.playlist_list {
+  display: flex;
+  flex-direction: column;
+}
+
+.playlist_content {
+  animation: shadowCircle 5s ease-in-out infinite;
+}
+
+@keyframes shadowCircle {
+  0% {
+    box-shadow: -3px 0 5px var(--accent-color);
+  }
+  15% {
+    box-shadow: -3px -3px 5px var(--accent-color);
+  }
+  30% {
+    box-shadow: 0 -3px 5px var(--accent-color);
+  }
+  45% {
+    box-shadow: 3px -3px 5px var(--accent-color);
+  }
+  60% {
+    box-shadow: 3px 0px 5px var(--accent-color);
+  }
+  75% {
+    box-shadow: 3px 3px 5px var(--accent-color);
+  }
+  90% {
+    box-shadow: 0px 3px 5px var(--accent-color);
+  }
+  100% {
+    box-shadow: -3px 3px 5px var(--accent-color);
+  }
+}

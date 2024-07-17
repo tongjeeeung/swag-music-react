@@ -1,0 +1,20 @@
+.like_button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+  box-sizing: content-box;
+}
+
+.like_svg {
+  width: 28px;
+  height: 28px;
+  fill: var(--text-color);
+  transition: ease 0.5s;
+}
+
+.active {
+  fill: var(--accent-color);
+  transition: ease 0.5s;
+}

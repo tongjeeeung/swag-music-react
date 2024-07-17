@@ -1,0 +1,1 @@
+export { FooterUI } from './footer';

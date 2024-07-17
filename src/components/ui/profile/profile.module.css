@@ -1,0 +1,29 @@
+.profile {
+  border-top: 1px solid var(--muted-color);
+  padding: 2%;
+  display: flex;
+  gap: 2%;
+  justify-content: space-between;
+  block-size: 100vh;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 4%;
+  padding: 2%;
+}
+
+.box {
+  width: 340px;
+  height: 340px;
+  margin-block-end: 4%;
+}
+
+.image {
+  block-size: 100%;
+  inline-size: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+}

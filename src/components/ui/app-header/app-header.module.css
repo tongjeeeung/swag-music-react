@@ -1,0 +1,144 @@
+.header {
+  background-color: var(--page-bg-color);
+  color: var(--text-color);
+  padding: 2%;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  position: relative;
+}
+
+.header_menu {
+  list-style: none;
+  display: flex;
+  gap: 2vw;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu_item {
+  font-size: clamp(0.875rem, 0.602rem + 1.165vw, 2rem);
+  cursor: pointer;
+  transition: 0.3s;
+  block-size: 55px;
+  display: flex;
+  align-items: center;
+}
+
+.menu_item:hover {
+  color: var(--accent-color);
+  text-shadow: 1px 2px 0 var(--shadow-color);
+  transition: 0.3s;
+}
+
+.title_menu {
+  cursor: default;
+  font-size: clamp(1rem, 0.15rem + 3.625vw, 4.5rem);
+  text-align: center;
+  font-family: 'Caveat';
+  text-shadow: 2px 1px 0 var(--shadow-color);
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.title_menu:hover {
+  color: var(--accent-color);
+  text-shadow: 2px 2px 5px var(--shadow-color);
+  transition: 0.3s;
+}
+
+.menu_logo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.menu_avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.content {
+  display: none;
+  flex-direction: column;
+  text-align: end;
+  justify-content: end;
+  block-size: 12vh;
+  inline-size: 25%;
+  gap: 8%;
+  position: absolute;
+  bottom: 12%;
+  right: 2%;
+}
+
+.link {
+  text-align: end;
+  padding: 0;
+  color: var(--text-color);
+  text-decoration: none;
+  transition: 0.3s ease-in-out;
+}
+
+.link:hover {
+  color: var(--accent-color);
+  text-shadow: 1px 2px 0 var(--shadow-color);
+  transition: 0.3s ease-in-out;
+}
+
+@media (width > 1440px) {
+  .menu_logo {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .menu_avatar {
+    width: 80px;
+    height: 80px;
+  }
+
+  .menu_item:hover {
+    text-shadow: 2px 2px 0 var(--shadow-color);
+  }
+  
+  .title_menu {
+    text-shadow: 3px 2px 0 var(--shadow-color);
+  }
+  
+  .title_menu:hover {
+    text-shadow: 3px 2px 5px var(--shadow-color);
+  }
+}
+
+@media (width < 768px) {
+  .menu_logo {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .menu_avatar {
+    width: 40px;
+    height: 40px;
+  }
+
+  .header div {
+    gap: 0;
+    margin-inline: 4px;
+  }
+
+  .header_menu {
+    gap: 4px;
+  }
+
+  .menu_item:hover {
+    text-shadow: 1px 1px 0 var(--shadow-color);
+  }
+  
+  .title_menu {
+    text-shadow: 2px 1px 0 var(--shadow-color);
+  }
+  
+  .title_menu:hover {
+    text-shadow: 2px 1px 3px var(--shadow-color);
+  }
+}

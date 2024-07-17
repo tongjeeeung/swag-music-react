@@ -1,0 +1,85 @@
+.track {
+  display: flex;
+  justify-content: space-between;
+  inline-size: 100%;
+  block-size: 3.8vw;
+  text-wrap: nowrap;
+  transition: background-color ease 0.5s;
+}
+
+.track:hover {
+  background-color: var(--menu-btn-color);
+  transition: ease 0.5s;
+}
+
+.track_first {
+  display: flex;
+  gap: 2%;
+  align-items: center;
+}
+
+.track_second {
+  margin-inline-end: 2%;
+  gap: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.track_executor {
+  font-size: clamp(0.875rem, 0.743rem + 0.563vw, 1.25rem);
+  font-weight: 300;
+  color: var(--text-color);
+  text-decoration: none;
+  transition: color ease 0.5s;
+}
+
+.track_executor:hover {
+  color: var(--accent-color);
+  transition: color ease 0.5s;
+}
+
+.track_name {
+  width: 30vw;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: clamp(0.875rem, 0.743rem + 0.563vw, 1.25rem);
+  font-weight: 300;
+}
+
+.track_duration {
+  color: var(--muted-color);
+  font-size: clamp(0.875rem, 0.743rem + 0.563vw, 1.25rem);
+  font-weight: 300;
+}
+
+@media (width > 1440px) {
+  .track_name {
+    width: 310px;
+  }
+}
+
+@media (1440px > width >= 768px) {
+  .track {
+    block-size: 3.4vw;
+  }
+
+  .track_name {
+    width: 160px;
+  }
+}
+
+@media (width < 768px) {
+  .track {
+    block-size: 3.4vw;
+  }
+
+  .track_name {
+    width: 60px;
+  }
+
+  .track_executor {
+    max-width: 80px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

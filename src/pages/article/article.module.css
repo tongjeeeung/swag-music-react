@@ -1,0 +1,6 @@
+.article {
+  display: flex;
+  flex-direction: column;
+  gap: 2%;
+  padding: 2%;
+}

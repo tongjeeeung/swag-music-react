@@ -1,0 +1,48 @@
+.about {
+  display: flex;
+  gap: 2%;
+  padding: 2%;
+  justify-content: space-between;
+}
+
+.infoBox {
+  inline-size: 50vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2%;
+}
+
+.title {
+  font-size: 46px;
+  cursor: default;
+  text-align: center;
+  font-family: 'Caveat';
+  text-shadow: 2px 1px 0 var(--shadow-color);
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.text {
+  margin: 0;
+  padding: 1%;
+  font-size: 18px;
+  word-spacing: 4px;
+  letter-spacing: 0.5px;
+  line-height: 1.2;
+  text-align: justify;
+}
+
+.imgBox{ 
+  position: relative;
+  inline-size: 50vw;
+  block-size: 90vh;
+}
+
+.image {
+  position: absolute;
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+  object-position: center;
+}

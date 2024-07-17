@@ -1,0 +1,110 @@
+.popular {
+  padding: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  gap: 5%;
+}
+
+.popular_track {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.popular_track_info {
+  position: absolute;
+  top: 80%;
+  left: -100%;
+  transition: left ease-in-out 0.5s;
+}
+
+.popular_track_img:hover + .popular_track_info {
+  left: 5%;
+  transition: left ease-in-out 0.5s;
+}
+
+.popular_track_img {
+  width: 30vw;
+  height: 30vw;
+  object-fit: fill;
+  object-position: center;
+  transition: filter ease 0.3s;
+}
+
+.popular_track_img:hover {
+  filter: brightness(30%);
+  transition: all ease 0.3s;
+}
+
+.popular_track_title {
+  color: var(--text-color-on-over);
+  font-size: clamp(1rem, 0.868rem + 0.563vw, 1.375rem);
+  margin-block-end: 3%;
+}
+
+.popular_track_autor {
+  font-size: clamp(1rem, 0.868rem + 0.563vw, 1.375rem);
+  color: var(--muted-color);
+  font-weight: 300;
+}
+
+.popular_track_list {
+  width: 50vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.popular_track {
+  animation: shadowCircle 10s ease-in-out infinite;
+}
+
+@keyframes shadowCircle {
+  0% {
+    box-shadow: -2px 2px 5px var(--accent-color);
+  }
+  25% {
+    box-shadow: -2px -2px 5px var(--accent-color);
+  }
+  50% {
+    box-shadow: 2px -2px 5px var(--accent-color);
+  }
+  75% {
+    box-shadow: 2px 2px 5px var(--accent-color);
+  }
+  100% {
+    box-shadow: -2px 2px 5px var(--accent-color);
+  }
+}
+
+@media (width > 1440px) {
+  .popular_track_title {
+    font-size: clamp(1rem, 0.727rem + 1.165vw, 2.125rem);
+  }
+  
+  .popular_track_autor {
+    font-size: clamp(1rem, 0.727rem + 1.165vw, 2.125rem);
+  }
+}
+
+@media (width < 768px) {
+  .popular {
+    gap: 2%;
+  }
+
+  .popular_track_info {
+    top: 50%;
+  }
+
+  .popular_track_title {
+    font-size: clamp(1rem, 0.727rem + 1.165vw, 2.125rem);
+  }
+  
+  .popular_track_autor {
+    font-size: clamp(1rem, 0.727rem + 1.165vw, 2.125rem);
+  }
+}

@@ -1,0 +1,35 @@
+.playlist_item {
+  cursor: default;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-block-end: 2%;
+}
+
+.playlist_item_image {
+  block-size: 220px;
+  inline-size: 220px;
+  object-fit: fill;
+  object-position: center;
+  transition: all ease 0.3s;
+}
+
+.playlist_item_image:hover {
+  cursor: pointer;
+  filter: brightness(50%);
+  transition: all ease 0.3s;
+}
+
+.playlist_item_title {
+  margin-block: 2%;
+  font-size: clamp(0.875rem, 0.743rem + 0.563vw, 1.25rem);
+}
+
+.playlist_item_executor {
+  cursor: pointer;
+  font-weight: 100;
+  color: var(--muted-color);
+  font-size: clamp(0.688rem, 0.621rem + 0.282vw, 0.875rem);
+}

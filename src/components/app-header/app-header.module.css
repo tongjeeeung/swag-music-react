@@ -1,0 +1,18 @@
+.dark {
+  --page-bg-color: #000;
+  --text-color: #fff9ee;
+  --accent-color: #83D350;
+  --shadow-color: #778D45;
+  --muted-color: #666359;
+  --text-color-on-over: #fff9ee;
+  --menu-btn-color: rgba(112, 155, 100, 0.4);
+}
+
+.light {
+  --page-bg-color: #f8f4ff;
+  --text-color: #270000;
+  --accent-color: #db0000;
+  --shadow-color: #ab4848;
+  --text-color-on-over: #fff9ee;
+  --menu-btn-color: rgba(154, 76, 76, 0.4);
+}

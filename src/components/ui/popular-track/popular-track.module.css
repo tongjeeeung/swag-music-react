@@ -1,0 +1,86 @@
+.popular_item {
+  block-size: 3.8vw;
+  display: flex;
+  justify-content: space-between;
+  inline-size: 100%;
+  text-wrap: nowrap;
+  transition: background-color ease 0.5s;
+}
+
+.popular_item:hover {
+  background-color: var(--menu-btn-color);
+  transition: ease 0.5s;
+}
+
+.popular_track_first {
+  display: flex;
+  gap: 2%;
+  align-items: center;
+}
+
+.popular_track_second {
+  margin-inline-end: 2%;
+  gap: 15px;
+  align-items: center;
+  display: flex;
+}
+
+.popular_executor {
+  font-size: clamp(0.875rem, 0.743rem + 0.563vw, 1.25rem);
+  font-weight: 300;
+}
+
+.popular_name {
+  width: 230px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: clamp(0.875rem, 0.743rem + 0.563vw, 1.25rem);
+  font-weight: 300;
+}
+
+.popular_duration {
+  font-size: clamp(0.875rem, 0.743rem + 0.563vw, 1.25rem);
+  font-weight: 300;
+  color: var(--muted-color);
+}
+
+@media (width > 1440px) {
+  .popular_name {
+    width: 310px;
+  }
+}
+
+@media (1440px > width >= 768px) {
+  .popular_item {
+    block-size: 3.4vw;
+  }
+
+  .popular_track_list {
+    width: 420px;
+  }
+
+  .popular_name {
+    width: 160px;
+  }
+}
+
+@media (width < 768px) {
+  .popular_item {
+    block-size: 3.4vw;
+  }
+
+  .popular_track_list {
+    width: 60%;
+    gap: 4px;
+  }
+
+  .popular_name {
+    width: 60px;
+  }
+
+  .popular_autor {
+    max-width: 80px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

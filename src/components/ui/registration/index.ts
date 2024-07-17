@@ -1,0 +1,1 @@
+export { RegistrationUI } from './registration'
