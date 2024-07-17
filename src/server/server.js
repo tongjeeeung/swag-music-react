@@ -28,9 +28,22 @@ const upload = multer({ storage });
 // Middleware для парсинга JSON в теле запроса
 app.use(bodyParser.json());
 
+const allowedOrigins = [
+  'http://localhost:5173',
+  'https://tongjeeeung.github.io/swag-music-react/'
+];
+
 // Используем middleware cors
 app.use(cors({
-  origin: 'http://localhost:5173'
+  origin: function (origin, callback) {
+    // Если origin не указан (например, при запросах с того же домена), разрешаем его
+    if (!origin) return callback(null, true);
+    if (allowedOrigins.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  }
 }));
 
 // Настройка статической директории
