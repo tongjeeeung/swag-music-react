@@ -10,11 +10,19 @@
 .play_svg {
   width: 28px;
   height: 28px;
+  color: var(--text-color);
   fill: var(--text-color);
+  transition: ease 0.5s;
+}
+
+.play_svg:hover {
+  fill: var(--shadow-color);
+  color: var(--shadow-color);
   transition: ease 0.5s;
 }
 
 .active {
   fill: var(--accent-color);
+  color: var(--accent-color);
   transition: ease 0.5s;
 }

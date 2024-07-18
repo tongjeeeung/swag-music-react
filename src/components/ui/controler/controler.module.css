@@ -184,6 +184,7 @@
   height: 32px;
   fill: var(--text-color);
   transition: ease 0.5s;
+  color: var(--text-color);
 }
 
 .prevButton {
@@ -191,6 +192,7 @@
 }
 
 .svg:hover {
+  color: var(--shadow-color);
   fill: var(--shadow-color);
   transition: ease 0.5s;
 }

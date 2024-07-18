@@ -12,9 +12,17 @@
   height: 28px;
   fill: var(--text-color);
   transition: ease 0.5s;
+  color: var(--text-color);
+}
+
+.like_svg:hover {
+  fill: var(--shadow-color);
+  color: var(--shadow-color);
+  transition: ease 0.5s;
 }
 
 .active {
   fill: var(--accent-color);
   transition: ease 0.5s;
+  color: var(--accent-color);
 }
