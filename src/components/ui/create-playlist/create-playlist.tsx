@@ -134,6 +134,9 @@ export const CreatePlaylistUI: FC<CreateIUProps> = ({
     if (e.target.files && e.target.files[0]) {
       setImage(e.target.files[0]);
     }
+    else if(typeof e.target.value === 'string') {
+      setImage(e.target.value);
+    }
   };
 
   const handleCancelClick = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -147,10 +150,10 @@ export const CreatePlaylistUI: FC<CreateIUProps> = ({
         {image ? (
           <img className={styles.image} src={typeof image === "string" ? image : URL.createObjectURL(image)} alt="Playlist" onClick={() => setImage('')} />
         ) : (
-          <div className={styles.input_img_wrapper}>
-            <input className={styles.input_img} type="file" onChange={handleImageChange} />
-            <span className={styles.input_img_text}>Выберите файл</span>
-          </div>
+          //<div className={styles.input_img_wrapper}>
+            <input className={styles.input} type="text" placeholder="Link" onChange={handleImageChange} />
+            //<span className={styles.input_img_text}>Выберите файл</span>
+          //</div>
         )}
         <div className={styles.form}>
           <input

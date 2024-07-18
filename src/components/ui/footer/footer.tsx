@@ -1,7 +1,7 @@
 import { FC } from "react";
 import styles from './footer.module.css';
-import vkSvg from '../../../assets/svg/iconVk.svg';
-import tgSvg from '../../../assets/svg/iconTg.svg';
+//import vkSvg from '../../../assets/svg/iconVk.svg';
+//import tgSvg from '../../../assets/svg/iconTg.svg';
 
 export const FooterUI: FC = () => (
   <footer className={styles.footer}>

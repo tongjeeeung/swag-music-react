@@ -46,7 +46,7 @@ export const getCurrentApi = () => {
 }
 
 export const registerUser = async (name: string, email: string, password: string) => {
-  const avatar = "/static/images/avatar.jpg";
+  const avatar = "/swag-music-react/static/images/default/avatar.jpg";
   const response = await axios.post(`${API_URL}/user/register`, { name, email, password, avatar });
   return response.data;
 };

@@ -412,7 +412,7 @@ app.post('/playlists/create', upload.single('image'), async (req, res) => {
       _id: uuidv4(),
       name: name,
       executor: userName,
-      image: req.file ? `/uploads/${req.file.filename}` : '',
+      image: req.file ? `/uploads/${req.file.filename}` : req.image,
       information: info ? info : ' ',
       tracks: JSON.parse(tracks),
       executorID: userId,
