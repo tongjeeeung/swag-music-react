@@ -46,6 +46,12 @@
   pointer-events: none;
 }
 
+.input_link {
+  width: 220px;
+  height: 220px;
+  border: 1px solid var(--text-color);
+}
+
 .image {
   width: 220px;
   height: 220px;

@@ -8,7 +8,6 @@ export const ModalUI: FC<TModal> = ({ children, onClose }) => {
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      console.log(modalRef.current, event.target)
       if (modalRef.current === event.target as Node) {
         onClose();
       }

@@ -151,7 +151,7 @@ export const CreatePlaylistUI: FC<CreateIUProps> = ({
           <img className={styles.image} src={typeof image === "string" ? image : URL.createObjectURL(image)} alt="Playlist" onClick={() => setImage('')} />
         ) : (
           //<div className={styles.input_img_wrapper}>
-            <input className={styles.input} type="text" placeholder="Link" onChange={handleImageChange} />
+            <input className={styles.input_link} type="text" placeholder="Link" onChange={handleImageChange} />
             //<span className={styles.input_img_text}>Выберите файл</span>
           //</div>
         )}

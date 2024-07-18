@@ -445,7 +445,7 @@ app.post('/playlists/create', upload.single('image'), async (req, res) => {
 app.put('/playlists/create/:id', upload.single('image'), async (req, res) => {
   const { id } = req.params;
   const { userId, name, info, tracks, image } = req.body;
-  
+
   if (!userId || !name) {
     return res.status(400).json({ error: 'userId and name are required' });
   }
@@ -463,19 +463,15 @@ app.put('/playlists/create/:id', upload.single('image'), async (req, res) => {
     const updatedPlaylist = await Playlist.findById(id);
 
     if (!updatedPlaylist) {
-      return res.status(404).json({ error: 'updatedPlaylist not found' });
+      return res.status(404).json({ error: 'Playlist not found' });
     }
 
     updatedPlaylist.name = name;
-    updatedPlaylist.image = req.file ? `/uploads/${req.file.filename}` : image;
+    updatedPlaylist.image = req.file ? `/uploads/${req.file.filename}` : (typeof image === 'string' ? image : updatedPlaylist.image);
     updatedPlaylist.information = info ? info : ' ';
     updatedPlaylist.tracks = JSON.parse(tracks);
 
     await updatedPlaylist.save();
-
-    if (!updatedPlaylist) {
-      return res.status(404).json({ error: 'Playlist not found' });
-    }
 
     res.json({ message: 'Playlist updated successfully', playlist: updatedPlaylist });
   } catch (error) {
