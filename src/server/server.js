@@ -401,18 +401,21 @@ app.get('/playlists', async (req, res) => {
 
 // Эндпоинт для сохранения плейлиста
 app.post('/playlists/create', upload.single('image'), async (req, res) => {
-  const { userId, name, info, tracks, userName, image } = req.body;
+  const { userId, name, info, tracks, userName } = req.body;
 
   if (!userId || !name) {
     return res.status(400).json({ error: 'userId and name are required' });
   }
 
   try {
+    const uploadedImage = req.file ? `/uploads/${req.file.filename}` : '';
+    const playlistImage = typeof req.body.image === 'string' ? req.body.image : uploadedImage;
+
     const playlist = {
       _id: uuidv4(),
       name: name,
       executor: userName,
-      image: req.file ? `/uploads/${req.file.filename}` : image,
+      image: playlistImage,
       information: info ? info : ' ',
       tracks: JSON.parse(tracks),
       executorID: userId,
