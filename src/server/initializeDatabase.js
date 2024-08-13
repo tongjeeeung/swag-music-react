@@ -445,7 +445,7 @@ const saluki = {
     tracks: [{
       name: 'Огней',
       duration: '3:01',
-      url: '/swag-music-react/static/images/executors/saluki/tracks/Огней.mp3'
+      url: '/swag-music-react/static/images/executors/saluki/tracks/Огней.mp3'
       },
     ],
   }],
