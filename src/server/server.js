@@ -708,12 +708,12 @@ app.delete('/blog/clear', async (req, res) => {
 //const MONGODB_URL = "mongodb+srv://tongjeeeung:<password>@swag-music.wpw2inx.mongodb.net/?retryWrites=true&w=majority&appName=swag-music"
 
 // Подключение к базе данных и запуск сервера
-mongoose.connect(process.env.MONGODB_URL)
+mongoose.connect('mongodb://localhost:27017/musicapp')
   .then(() => {
     console.log('Подключено к базе данных');
     initializeDatabase();
     app.listen(port, () => {
-      console.log(`Сервер запущен на ${process.env.MONGODB_URL}`);
+      console.log(`Сервер запущен на http://localhost:${port}`);
     });
   })
   .catch(error => {

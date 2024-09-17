@@ -75,9 +75,9 @@ export const SearchUI: FC<SearchUIProps> = ({artists, handleSearch}) => {
     const state = { background: location };
 
     if (type === 'executor') {
-      navigate(`/${type}/${id}`);
+      navigate(`/swag-music-react/${type}/${id}`);
     } else {
-      navigate(`/playlists/${albumId}`, { state });
+      navigate(`/swag-music-react/playlists/${albumId}`, { state });
     }
   };
 

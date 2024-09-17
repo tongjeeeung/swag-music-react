@@ -66,7 +66,7 @@ export const ForgotUI: FC<ForgotUIProps> = ({email, setEmail, setPassword, passw
         {localErrors.password && <p className={styles.error}>{localErrors.password}</p>}
 
         <button className={styles.button} type="submit">Send</button>
-        <Link to={'/login'} className={styles.button}>Login</Link>
+        <Link to={'/swag-music-react/login'} className={styles.button}>Login</Link>
       </form>
     </div>
   );

@@ -88,7 +88,7 @@ export const RegistrationUI: FC<RegistrationUIProps> = ({name, setName, email, s
         {localErrors.password && <p className={styles.error}>{localErrors.password}</p>}
 
         <button className={styles.button} type="submit">Registration</button>
-        <Link to={'/login'} className={styles.button}>Login</Link>
+        <Link to={'/swag-music-react/login'} className={styles.button}>Login</Link>
       </form>
     </div>
   );

@@ -8,7 +8,7 @@ export const TrackUI: FC<TTrack & {isPlaying: boolean}> = ({name, executor, dura
   <li className={styles.track} key={id} style={isPlaying ? {backgroundColor: 'var(--menu-btn-color)'} : {}}>
     <div className={styles.track_first}>
       <PlayButton playVoid={playVoid} isPlaying={isPlaying}></PlayButton>
-      <Link to={`/executor/${executorID}`} className={styles.track_executor}>{executor}</Link>
+      <Link to={`/swag-music-react/executor/${executorID}`} className={styles.track_executor}>{executor}</Link>
       <span>-</span>
       <h5 className={styles.track_name}>{name}</h5>
     </div>

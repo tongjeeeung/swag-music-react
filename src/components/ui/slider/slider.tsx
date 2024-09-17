@@ -39,14 +39,14 @@ export const SliderUI: FC<{sliderVoid (arg: HTMLUListElement): void, items: TPla
           <li className={styles.list_item} key={playlist._id}>
             <img className={styles.list_bg_img} src={playlist.executorImg} alt={playlist.executor} />
             <div className={styles.list_info}>
-              <Link to={`/executor/${playlist.executorID}`} className={styles.slider_title}>
+              <Link to={`/swag-music-react/executor/${playlist.executorID}`} className={styles.slider_title}>
                 {`This is ${playlist.executor}`}
               </Link>
               <p className={styles.info}>{playlist.information}</p>
               <button className={styles.slider_button} onClick={() => listenHandle(playlist)}>Listen</button>
             </div>
             <div className={styles.position}>
-              <Link to={`/playlists/${playlist._id}`} state={{ background: location }} className={styles.album} style={{ color: "inherit", textDecoration: 'none' }}>
+              <Link to={`/swag-music-react/playlists/${playlist._id}`} state={{ background: location }} className={styles.album} style={{ color: "inherit", textDecoration: 'none' }}>
                 <img className={styles.album_img} src={typeof playlist.image === 'string' ? playlist.image : ''} alt={playlist.name} />
                 <div className={styles.album_info}>
                   <h4 className={styles.album_name}>{playlist.name}</h4>

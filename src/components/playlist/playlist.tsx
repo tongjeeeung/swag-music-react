@@ -30,7 +30,7 @@ export const Playlist: FC = () => {
       dispatch(toggleAddedPlaylistThunk(albumId.id!));
     }
     else {
-      navigate('/login');
+      navigate('/swag-music-react/login');
     }
   }
 
@@ -39,7 +39,7 @@ export const Playlist: FC = () => {
   }
 
   const changeHandle = () => {
-    navigate(`/playlists/update/${albumId.id}`, {state: { background: location.state.background}})
+    navigate(`/swag-music-react/playlists/update/${albumId.id}`, {state: { background: location.state.background}})
   }
 
   return <>{isLoading ? (<Preloader></Preloader>) : (<>{album === null ? (<Preloader></Preloader>) : (<PlaylistUI name={album ? album.name : ''} executor={album ? album.executor : ''} image={album ? album.image : ''} isAdd={isAdd} changeHandle={changeHandle} isShuffle={isShuffle} isOwner={isOwner} information={album ? album.information : ''} id={albumId.id} addPlaylistHandle={addPlaylistHandle} shuffleHandle={shuffleHandle}>

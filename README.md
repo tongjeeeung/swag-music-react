@@ -1,5 +1,8 @@
 # Pet-проект "Swag-Music"
 
+Проект можно посмотреть на github-pages: https://tongjeeeung.github.io/swag-music-react/home
+(Загрузка может быть больше 5 минут, т.к. сервер бесплатный)
+
 Стек: React, Redux, HTML, CSS, TS, JS, Vite, Node.js, Express, MongoDB
 
 Структура проекта:
@@ -35,9 +38,15 @@ npm run preview
 
 ```
 
-Перейти на http://localhost:4173/home
+Перейти на http://localhost:4173/swag-music-react/home
 
+Или
 
+```
+npm run dev
+
+```
+Перейти на http://localhost:5173/swag-music-react/home
 
 ## Компонент `App`
 

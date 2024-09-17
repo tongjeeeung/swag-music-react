@@ -65,9 +65,9 @@ export const LoginUI: FC<LoginUIProps> = ({email, setEmail, handleSubmit, passwo
         />
         {localErrors.password && <p className={styles.error}>{localErrors.password}</p>}
 
-        <Link to={'/forgot'} className={styles.forgot}>Forgot your password?</Link>
+        <Link to={'/swag-music-react/forgot'} className={styles.forgot}>Forgot your password?</Link>
         <button className={styles.button} type="submit">Login</button>
-        <Link to={'/registration'} className={styles.button}>Registration</Link>
+        <Link to={'/swag-music-react/registration'} className={styles.button}>Registration</Link>
       </form>
     </div>
   );

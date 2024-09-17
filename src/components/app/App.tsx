@@ -50,23 +50,23 @@ return <>
     <AppHeader></AppHeader>
       <Routes location={backgroundLocation || location}>
         <Route path='*' element={<NotFound404></NotFound404>}></Route>
-        <Route path='/home' element={<AppMusic></AppMusic>}></Route>
-        <Route path='/playlists' element={<PlaylistsPage></PlaylistsPage>}></Route>
-        <Route path='/blog' element={<BlogPage></BlogPage>}></Route>
-        <Route path='/information' element={<InformationPage></InformationPage>}></Route>
-        <Route path='/blog/:id' element={<ArticlePage></ArticlePage>}></Route>
-        <Route path='/executor/:id' element={<ExecutorPage></ExecutorPage>}></Route>
-        <Route path='/login' element={<ProtectedRoute onlyUnAuth><LoginPage></LoginPage></ProtectedRoute>}></Route>
-        <Route path='/registration' element={<ProtectedRoute onlyUnAuth><RegistrationPage></RegistrationPage></ProtectedRoute>}></Route>
-        <Route path='/forgot' element={<ProtectedRoute onlyUnAuth><ForgotPage></ForgotPage></ProtectedRoute>}></Route>
-        <Route path='/profile' element={<ProtectedRoute><ProfilePage></ProfilePage></ProtectedRoute>}></Route>
+        <Route path='/swag-music-react/home' element={<AppMusic></AppMusic>}></Route>
+        <Route path='/swag-music-react/playlists' element={<PlaylistsPage></PlaylistsPage>}></Route>
+        <Route path='/swag-music-react/blog' element={<BlogPage></BlogPage>}></Route>
+        <Route path='/swag-music-react/information' element={<InformationPage></InformationPage>}></Route>
+        <Route path='/swag-music-react/blog/:id' element={<ArticlePage></ArticlePage>}></Route>
+        <Route path='/swag-music-react/executor/:id' element={<ExecutorPage></ExecutorPage>}></Route>
+        <Route path='/swag-music-react/login' element={<ProtectedRoute onlyUnAuth><LoginPage></LoginPage></ProtectedRoute>}></Route>
+        <Route path='/swag-music-react/registration' element={<ProtectedRoute onlyUnAuth><RegistrationPage></RegistrationPage></ProtectedRoute>}></Route>
+        <Route path='/swag-music-react/forgot' element={<ProtectedRoute onlyUnAuth><ForgotPage></ForgotPage></ProtectedRoute>}></Route>
+        <Route path='/swag-music-react/profile' element={<ProtectedRoute><ProfilePage></ProfilePage></ProtectedRoute>}></Route>
       </Routes>
 
       {backgroundLocation && (
         <Routes>
-          <Route path='/playlists/:id' element={<Modal onClose={onClose}><Playlist /></Modal>}></Route>
-          <Route path='/playlists/create/new-playlist' element={<ProtectedRoute><Modal onClose={onClose}><CreatePlaylist></CreatePlaylist></Modal></ProtectedRoute>}></Route>
-          <Route path='/playlists/update/:id' element={<ProtectedRoute><Modal onClose={onClose}><CangePlaylist></CangePlaylist></Modal></ProtectedRoute>}></Route>
+          <Route path='/swag-music-react/playlists/:id' element={<Modal onClose={onClose}><Playlist /></Modal>}></Route>
+          <Route path='/swag-music-react/playlists/create/new-playlist' element={<ProtectedRoute><Modal onClose={onClose}><CreatePlaylist></CreatePlaylist></Modal></ProtectedRoute>}></Route>
+          <Route path='/swag-music-react/playlists/update/:id' element={<ProtectedRoute><Modal onClose={onClose}><CangePlaylist></CangePlaylist></Modal></ProtectedRoute>}></Route>
         </Routes>)}
       <Controler></Controler>
     <Footer></Footer>

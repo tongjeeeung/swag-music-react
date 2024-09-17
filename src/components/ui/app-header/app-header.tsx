@@ -53,10 +53,10 @@ export const AppHeaderUI: FC<TAppHeaderUIProps> = ({ userName, userAvatar, threm
   {isSearch && (<SearchUI artists={artists} handleSearch={handleSearch}></SearchUI>)}
   <header className={styles.header} ref={headerRef}>
     <ul className={styles.header_menu}>
-      <Link to={'/home'} style={{ textDecoration: 'none', color: "inherit" }}>
+      <Link to={'/swag-music-react/home'} style={{ textDecoration: 'none', color: "inherit" }}>
         <li className={styles.menu_item}>Home</li>
       </Link>
-      <Link to={'/playlists'} style={{ textDecoration: 'none', color: "inherit" }}>
+      <Link to={'/swag-music-react/playlists'} style={{ textDecoration: 'none', color: "inherit" }}>
         <li className={styles.menu_item}>Playlist</li>
       </Link>
       <li className={styles.menu_item} onClick={handleSearch}>Search</li>
@@ -66,22 +66,22 @@ export const AppHeaderUI: FC<TAppHeaderUIProps> = ({ userName, userAvatar, threm
       <span className={styles.title_menu}>SwAg MuSSSiC</span>
     </div>
     <ul className={styles.header_menu}>
-      <Link to={'/blog'} style={{ textDecoration: 'none', color: "inherit" }}>
+      <Link to={'/swag-music-react/blog'} style={{ textDecoration: 'none', color: "inherit" }}>
         <li className={styles.menu_item}>Blog</li>
       </Link>
-      <Link to={'/information'} style={{ textDecoration: 'none', color: "inherit" }}>
+      <Link to={'/swag-music-react/information'} style={{ textDecoration: 'none', color: "inherit" }}>
         <li className={styles.menu_item}>Information</li>
       </Link>
       {userName ? (<li className={styles.menu_item} ref={profileRef}>
         <img className={styles.menu_avatar} src={userAvatar} alt={userName}/>
-      </li>) : (<Link to={'/login'} style={{ textDecoration: 'none', color: "inherit" }}>
+      </li>) : (<Link to={'/swag-music-react/login'} style={{ textDecoration: 'none', color: "inherit" }}>
         <li className={styles.menu_item}>
           <img className={styles.menu_avatar} src={avatarDefault} alt={'Profile'}/>
         </li>
       </Link>)}
     </ul>
     <div className={styles.content} ref={contentRef}>
-      <Link to={'/profile'} className={styles.link}>Profile</Link>
+      <Link to={'/swag-music-react/profile'} className={styles.link}>Profile</Link>
       <button className={styles.link} onClick={logOutHandle}>Log out</button>
     </div>
   </header>

@@ -67,7 +67,7 @@ export const ControlerUI: FC<TControler & {open: boolean}> = ({likeVoid, image, 
       <img className={styles.image} src={image} />
       <div className={styles.info}>
         <h4 className={styles.title}>{name}</h4>
-        <Link to={`/executor/${executorID}`} className={styles.executor}>{executor}</Link>
+        <Link to={`/swag-music-react/executor/${executorID}`} className={styles.executor}>{executor}</Link>
       </div>
       <LikeButton likeVoid={likeVoid} isLike={isLike}/>
     </div>

@@ -45,7 +45,7 @@ export const ExecutorUI: FC<ExecutorUIProps> = ({executor, playlists, tracks, ex
         <h3 className={styles.section_name}>Playlists</h3>
         <ul className={styles.list}>
           {playlists.map((playlist) => {
-            return (<Link to={`/playlists/${playlist._id}`} state={{background: location}} style={{color: 'inherit', textDecoration: "none"}}>
+            return (<Link to={`/swag-music-react/playlists/${playlist._id}`} state={{background: location}} style={{color: 'inherit', textDecoration: "none"}}>
               <PlaylistItemUI name={playlist.name} executor={playlist.executor} image={typeof playlist.image === 'string' ? playlist.image : ''} id={playlist._id}></PlaylistItemUI>
             </Link>)
           })}
@@ -55,7 +55,7 @@ export const ExecutorUI: FC<ExecutorUIProps> = ({executor, playlists, tracks, ex
         <h3 className={styles.section_name}>Other executors</h3>
         <ul className={styles.list}>
         {executors.map((_executor) => {
-            return (<Link to={`/executor/${_executor._id}`} style={{color: 'inherit', textDecoration: "none"}}>
+            return (<Link to={`/swag-music-react/executor/${_executor._id}`} style={{color: 'inherit', textDecoration: "none"}}>
               <li className={styles.item} key={_executor._id}>
               <img className={styles.other_image} src={_executor.image} alt={_executor.name} />
               <h4 className={styles.other_name}>{_executor.name}</h4>
