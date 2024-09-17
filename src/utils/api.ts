@@ -2,7 +2,7 @@ import { getCookie } from "./cookie.ts";
 import { TArtist, TPlaylist, TUser, TTrack, TBlog } from "./types";
 import axios from 'axios';
 
-const API_URL = 'http://localhost:3000';
+const API_URL = 'https://swag-music-react.onrender.com';
 
 export const logOutApi = () => {
   console.log('logOut')
