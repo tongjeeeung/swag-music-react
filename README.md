@@ -1,6 +1,6 @@
 # Pet-проект "Swag-Music"
 
-Проект можно посмотреть на github-pages: https://tongjeeeung.github.io/swag-music-react/home
+Проект можно посмотреть на github-pages: https://tongjeeeung.github.io/swag-music-react/
 (Загрузка может быть больше 5 минут, т.к. сервер бесплатный)
 
 Стек: React, Redux, HTML, CSS, TS, JS, Vite, Node.js, Express, MongoDB
