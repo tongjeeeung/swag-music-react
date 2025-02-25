@@ -859,9 +859,9 @@ app.delete("/blog/clear", async (req, res) => {
 //const MONGODB_URL = "mongodb+srv://tongjeeeung:<password>@swag-music.wpw2inx.mongodb.net/?retryWrites=true&w=majority&appName=swag-music"
 
 // Подключение к базе данных и запуск сервера
-mongoose.connect(process.env.MONGODB_URL)
+//mongoose.connect("mongodb://localhost:27017/musicapp")
 mongoose
-  .connect("mongodb://localhost:27017/musicapp")
+  .connect(process.env.MONGODB_URL)
   .then(() => {
     console.log("Подключено к базе данных");
     initializeDatabase();
