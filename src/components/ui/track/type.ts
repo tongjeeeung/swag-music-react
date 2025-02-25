@@ -7,6 +7,12 @@ export type TTrack = {
   duration: string;
   id: string;
   executorID: string;
+  index: number;
+  imgUrl: string;
+  albumName: string;
+  showPlayButton: boolean;
+  albumId: string;
+  showPlayButtonHandler: (isShow: boolean) => void;
   likeVoid: MouseEventHandler;
   playVoid: MouseEventHandler;
-}
+};

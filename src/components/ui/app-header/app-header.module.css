@@ -35,7 +35,7 @@
   cursor: default;
   font-size: clamp(1rem, 0.15rem + 3.625vw, 4.5rem);
   text-align: center;
-  font-family: 'Caveat';
+  font-family: "Caveat";
   text-shadow: 2px 1px 0 var(--shadow-color);
   font-weight: bold;
   transition: 0.3s;
@@ -91,7 +91,7 @@
     width: 80px;
     height: 80px;
   }
-  
+
   .menu_avatar {
     width: 80px;
     height: 80px;
@@ -100,45 +100,12 @@
   .menu_item:hover {
     text-shadow: 2px 2px 0 var(--shadow-color);
   }
-  
+
   .title_menu {
     text-shadow: 3px 2px 0 var(--shadow-color);
   }
-  
+
   .title_menu:hover {
     text-shadow: 3px 2px 5px var(--shadow-color);
-  }
-}
-
-@media (width < 768px) {
-  .menu_logo {
-    width: 40px;
-    height: 40px;
-  }
-  
-  .menu_avatar {
-    width: 40px;
-    height: 40px;
-  }
-
-  .header div {
-    gap: 0;
-    margin-inline: 4px;
-  }
-
-  .header_menu {
-    gap: 4px;
-  }
-
-  .menu_item:hover {
-    text-shadow: 1px 1px 0 var(--shadow-color);
-  }
-  
-  .title_menu {
-    text-shadow: 2px 1px 0 var(--shadow-color);
-  }
-  
-  .title_menu:hover {
-    text-shadow: 2px 1px 3px var(--shadow-color);
   }
 }

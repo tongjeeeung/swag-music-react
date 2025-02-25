@@ -6,7 +6,7 @@ export type TControler = {
   executorID: string;
   executor: string;
   duration: string;
-  trackTimer: string,
+  trackTimer: string;
   isLike: boolean;
   isPlaying: boolean;
   isShuffle: boolean;
@@ -21,4 +21,4 @@ export type TControler = {
   likeVoid: MouseEventHandler;
   playVoid: MouseEventHandler;
   progressVoid(arg: number): void;
-}
+};

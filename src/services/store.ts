@@ -1,16 +1,16 @@
-import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import { combineReducers, configureStore } from "@reduxjs/toolkit";
 
 import {
   TypedUseSelectorHook,
   useDispatch as dispatchHook,
-  useSelector as selectorHook
-} from 'react-redux';
-import { user } from './userSlice';
-import { playlists } from './playlistsSlice';
-import { current } from './currentSlice';
-import { popular } from './popularSlice';
-import { blog } from './blogSlice';
-import { executor } from './executorSlice';
+  useSelector as selectorHook,
+} from "react-redux";
+import { user } from "./userSlice";
+import { playlists } from "./playlistsSlice";
+import { current } from "./currentSlice";
+import { popular } from "./popularSlice";
+import { blog } from "./blogSlice";
+import { executor } from "./executorSlice";
 
 export const rootReducer = combineReducers({
   user: user,
@@ -23,7 +23,7 @@ export const rootReducer = combineReducers({
 
 export const store = configureStore({
   reducer: rootReducer,
-  devTools: process.env.NODE_ENV !== 'production'
+  devTools: process.env.NODE_ENV !== "production",
 });
 
 export type RootState = ReturnType<typeof rootReducer>;

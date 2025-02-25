@@ -52,20 +52,26 @@
 
 .info {
   margin: 0;
-  overflow: hidden;
+  max-block-size: 75%;
+  overflow: scroll;
   text-overflow: ellipsis;
+  word-spacing: 4px;
+  letter-spacing: 0.5px;
+  line-height: 1.2;
+  text-align: justify;
 }
 
 .list_info {
   position: absolute;
+  width: 60%;
   top: 6%;
   left: 3%;
-  font-size: clamp(0.875rem, 0.295rem + 1.548vw, 1.688rem);
+  font-size: clamp(0.875rem, 0.255rem + 1.548vw, 1.688rem);
   color: #d5d5d5;
 }
 
 .slider_button {
-  border: 1px solid;
+  border: 1px solid var(--text-color);
   background-color: inherit;
   color: #d5d5d5;
   inline-size: 20vw;
@@ -76,7 +82,7 @@
 }
 
 .slider_button:hover {
-  text-shadow: 1px 1px 0 var(--shadow-color);
+  text-shadow: 1px 2px 0 var(--shadow-color);
   border: 1px solid var(--accent-color);
   transition: all ease 0.5s;
 }
@@ -132,6 +138,10 @@
 }
 
 @media (width > 1440px) {
+  .slider {
+    block-size: 60vh;
+  }
+
   .list_info {
     font-size: clamp(1.25rem, 0.886rem + 1.553vw, 2.75rem);
   }
@@ -139,28 +149,49 @@
   .slider_button {
     inline-size: 15vw;
     block-size: 6vh;
-    border: 2px solid var(--shadow-color);
+    border: 2px solid var(--text-color);
+  }
+
+  .slider_button:hover {
+    text-shadow: 1px 2px 0 var(--shadow-color);
+    border: 2px solid var(--accent-color);
+    transition: all ease 0.5s;
   }
 }
 
-@media (1440px > width >= 768px) {
+@media (1440px > width > 768px) {
   .slider {
     block-size: 50vh;
   }
-  
+
+  .album_img {
+    width: 25vw;
+    height: 25vw;
+  }
+
   .slider_button {
     inline-size: 20vw;
     block-size: 5vh;
   }
 }
 
-@media (width < 768px) {
+@media (width <= 768px) {
   .slider {
-    block-size: 30vh;
+    block-size: 60vh;
   }
-  
+
+  .list_info {
+    inline-size: 95%;
+    overflow: auto;
+  }
+
+  .album {
+    display: none;
+  }
+
   .slider_button {
+    font-size: 14px;
     inline-size: 20vw;
-    block-size: 3.5vh;
+    block-size: 6vh;
   }
 }

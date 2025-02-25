@@ -12,11 +12,16 @@ export const ProtectedRoute = ({ onlyUnAuth, children }: IProtectedRoute) => {
   const user = useSelector(getUser);
 
   if (!onlyUnAuth && !user) {
-    return <Navigate to='/registration' state={{ from: location }} />;
+    return (
+      <Navigate
+        to="/swag-music-react/registration"
+        state={{ from: location }}
+      />
+    );
   }
 
   if (onlyUnAuth && user) {
-    const from = location.state?.from || { pathname: '/home' };
+    const from = location.state?.from || { pathname: "/swag-music-react/home" };
     return <Navigate replace to={from} />;
   }
 

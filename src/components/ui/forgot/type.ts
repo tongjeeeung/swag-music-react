@@ -6,4 +6,4 @@ export type ForgotUIProps = {
   handleSubmit: (e: SyntheticEvent) => void;
   password: string;
   setPassword: Dispatch<SetStateAction<string>>;
-}
+};

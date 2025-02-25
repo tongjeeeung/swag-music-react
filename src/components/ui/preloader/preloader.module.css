@@ -12,10 +12,11 @@
   width: 74px;
   height: 74px;
   border: 1px solid;
-  border-color: var(--text-color) var(--shadow-color) var(--accent-color) var(--page-bg-color);
+  border-color: var(--text-color) var(--shadow-color) var(--accent-color)
+    var(--page-bg-color);
 
   border-radius: 50%;
-  
+
   position: relative;
   top: 0;
   left: 0;

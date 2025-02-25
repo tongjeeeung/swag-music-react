@@ -1,1 +1,1 @@
-export { PopularList } from './popular-list';
+export { PopularList } from "./popular-list";

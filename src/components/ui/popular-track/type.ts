@@ -7,4 +7,4 @@ export type TPopularTrack = {
   duration: string;
   likeVoid: MouseEventHandler;
   playVoid: MouseEventHandler;
-}
+};

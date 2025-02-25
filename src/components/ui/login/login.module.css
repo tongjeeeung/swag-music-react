@@ -10,7 +10,7 @@
   padding-bottom: 2%;
   font-size: 42px;
   letter-spacing: 2vw;
-  font-family: 'Caveat';
+  font-family: "Caveat";
   text-shadow: 3px 3px 3px var(--shadow-color);
   cursor: default;
 }
@@ -29,7 +29,9 @@
   font-size: 14px;
   margin-block-end: 8%;
   text-decoration: none;
-  transition: color, padding 1s ease-in;
+  transition:
+    color,
+    padding 1s ease-in;
 }
 
 .forgot:hover {
@@ -80,19 +82,23 @@
   letter-spacing: 5px;
   margin-bottom: 0.5%;
   text-decoration: none;
-  transition: border, color 0.3s ease-in;
+  transition:
+    border,
+    color 0.3s ease-in;
 }
 
 .button:hover {
   border: 1px solid var(--accent-color);
   color: var(--accent-color);
-  transition: border, color 0.3s ease-in;
+  transition:
+    border,
+    color 0.3s ease-in;
 }
 
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
-    transition: 5000s ease-in-out 0s;
-    color: var(--text-color);
+  transition: 5000s ease-in-out 0s;
+  color: var(--text-color);
 }

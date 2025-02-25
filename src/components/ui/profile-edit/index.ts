@@ -1,1 +1,1 @@
-export { ProfileEditUI } from './profile-edit';
+export { ProfileEditUI } from "./profile-edit";

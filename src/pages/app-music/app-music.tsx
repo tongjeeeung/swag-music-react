@@ -1,8 +1,14 @@
 import { FC, useEffect } from "react";
 import { PlayListList, PopularList, Slider } from "../../components";
 import { useDispatch, useSelector } from "../../services/store";
-import { getIsLoading, getUserPlaylistsThunk } from "../../services/playlistsSlice";
-import { getPopularThunk, getIsLoadingPopular } from "../../services/popularSlice";
+import {
+  getIsLoading,
+  getUserPlaylistsThunk,
+} from "../../services/playlistsSlice";
+import {
+  getPopularThunk,
+  getIsLoadingPopular,
+} from "../../services/popularSlice";
 import { Preloader } from "../../components/ui";
 import { getUser } from "../../services/userSlice";
 
@@ -13,20 +19,34 @@ export const AppMusic: FC = () => {
   const user = useSelector(getUser);
 
   useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+  }, []);
+
+  useEffect(() => {
     if (user) {
       dispatch(getUserPlaylistsThunk(user.addedPlaylists));
     }
-  }, [user?.addedPlaylists])
+  }, [user?.addedPlaylists]);
 
   useEffect(() => {
-    dispatch(getPopularThunk())
-  }, [])
+    dispatch(getPopularThunk());
+  }, []);
 
-  return <>{isLoadinPlaylist || isLoadinPopular ? (<Preloader></Preloader>) : (
-    <main className='main'>
-      <Slider></Slider>
-      <PlayListList></PlayListList>
-      <PopularList></PopularList>
-    </main>
-  )}</>
-}
+  return (
+    <>
+      {isLoadinPlaylist || isLoadinPopular ? (
+        <Preloader></Preloader>
+      ) : (
+        <main className="main">
+          <Slider></Slider>
+          <PlayListList></PlayListList>
+          <PopularList></PopularList>
+        </main>
+      )}
+    </>
+  );
+};

@@ -1,5 +1,5 @@
 .modal {
-  background-color: rgba(0, 0, 0, .5);
+  background-color: rgba(0, 0, 0, 0.5);
   display: none;
   align-items: start;
   justify-content: center;
@@ -17,7 +17,9 @@
   opacity: 0;
   pointer-events: none;
   user-select: none;
-  transition: visibility 0s 0.6s, opacity 0.6s;
+  transition:
+    visibility 0s 0.6s,
+    opacity 0.6s;
 }
 
 .modal_opened {
@@ -26,7 +28,9 @@
   visibility: visible;
   opacity: 1;
   pointer-events: all;
-  transition: visibility 0s, opacity 0.6s;
+  transition:
+    visibility 0s,
+    opacity 0.6s;
 }
 
 .noScroll {

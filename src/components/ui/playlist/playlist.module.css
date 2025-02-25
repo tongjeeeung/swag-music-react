@@ -1,90 +1,111 @@
 .playlist_content {
-  margin: 10px 0;
-  max-width: 60%;
-  width: 100%;
-  min-height: 98%;
   background-color: var(--page-bg-color);
-  border-radius: 10px;
-  position: relative;
-  box-sizing: border-box;
   padding: 24px 26px;
   color: var(--text-color);
 }
 
 .playlist_header {
-  max-block-size: 220px;
   display: flex;
   gap: 2%;
   position: relative;
 }
 
 .playlist_image {
-  width: 220px;
-  height: 220px;
+  width: 20rem;
+  height: 20rem;
   object-fit: fill;
   object-position: center;
 }
 
 .playlist_header_information {
-  padding-block: 1%;
-  padding-inline-end: 1%;
+  padding-inline-end: 2%;
+  position: relative;
 }
 
 .playlist_title {
-  margin-block: 2%;
-  font-size: clamp(0.875rem, 0.743rem + 0.563vw, 1.25rem);
+  font-size: clamp(1rem, 1rem + 1.5vw, 2.3rem);
+  text-wrap: nowrap;
+  max-width: 70vw;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .playlist_executor {
   cursor: pointer;
   font-weight: 100;
+  margin-block-end: 1%;
   color: var(--muted-color);
-  font-size: clamp(0.688rem, 0.621rem + 0.282vw, 0.875rem);
+  font-size: clamp(0.5rem, 0.5rem + 1.282vw, 1.875rem);
+  text-decoration: none;
+  transition: ease 0.5s;
+}
+
+.playlist_executor:hover {
+  color: var(--accent-color);
+  transition: all ease 0.5s;
 }
 
 .playlist_header_information_about {
-  font-size: 14px;
+  margin-top: 1%;
+  font-size: clamp(0.5rem, 0.5rem + 1.282vw, 1rem);
+  inline-size: 100%;
+  max-block-size: 55%;
+  word-spacing: 4px;
+  letter-spacing: 0.5px;
+  line-height: 1.2;
+  text-align: justify;
+  overflow: scroll;
 }
 
-.playlist_button_add {
+.playlist_buttons {
   position: absolute;
-  bottom: 2%;
-  right: 2%;
+  bottom: 0%;
+  left: 0%;
+  display: flex;
+  gap: 5%;
+}
+
+.button_listen {
   border: 1px solid;
   background-color: inherit;
   color: var(--text-color);
-  inline-size: 80px;
-  block-size: 30px;
-  font-size: 14px;
+  inline-size: 180px;
+  block-size: 50px;
+  font-size: 1.25rem;
   transition: all ease 0.5s;
   cursor: pointer;
 }
 
-.playlist_button_add:hover {
+.button_listen:hover {
   text-shadow: 1px 1px 0 var(--shadow-color);
   border: 1px solid var(--accent-color);
   transition: all ease 0.5s;
 }
 
+.playlist_button_add {
+  padding: 0;
+  border: none;
+  background-color: inherit;
+  fill: var(--text-color);
+  color: var(--text-color);
+  block-size: 50px;
+  transition: all ease 0.5s;
+  cursor: pointer;
+}
+
+.playlist_button_add:hover {
+  fill: var(--shadow-color);
+  color: var(--shadow-color);
+  transition: all ease 0.5s;
+}
+
 .playlist_shuffle_button {
-  margin-block: 2%;
-  inline-size: 100%;
-  block-size: 7vh;
+  margin-block: 0;
   background-color: transparent;
   border: none;
   text-align: start;
-  color: var(--text-color);
-  font-family: 'Caveat';
-  font-size: 32px;
-  display: flex;
-  align-items: center;
-  gap: 1%;
   padding: 0;
-}
-
-.playlist_shuffle_button:hover {
-  background-color: var(--menu-btn-color);
-  transition: all ease 0.5s;
+  cursor: pointer;
 }
 
 .playlist_shuffle_svg {
@@ -95,19 +116,67 @@
   transition: ease 0.5s;
 }
 
+.playlist_shuffle_svg:hover {
+  color: var(--shadow-color);
+  fill: var(--shadow-color);
+  transition: ease 0.5s;
+}
+
 .playlist_shuffle_active {
   color: var(--accent-color);
   fill: var(--accent-color);
   transition: ease 0.5s;
 }
 
+.playlist_shuffle_active:hover {
+  color: var(--shadow-color);
+  fill: var(--shadow-color);
+  transition: ease 0.5s;
+}
+
+.track_lable {
+  margin-top: 2%;
+  block-size: 4vh;
+  inline-size: 100%;
+  color: var(--muted-color);
+  font-size: clamp(0.5rem, 0.5rem + 1vw, 1.5rem);
+  border-bottom: 1px solid var(--muted-color);
+  position: relative;
+}
+
 .playlist_list {
   display: flex;
   flex-direction: column;
+  min-block-size: 30vh;
 }
 
 .playlist_content {
   animation: shadowCircle 5s ease-in-out infinite;
+}
+
+@media (width > 1440px) {
+  .playlist_header_information_about {
+    font-size: 28px;
+    max-block-size: 25vh;
+  }
+}
+
+@media (1440px > width > 768px) {
+  .playlist_title {
+    max-width: 60vw;
+  }
+}
+
+@media (width <= 768px) {
+  .playlist_header_information_about {
+    max-block-size: 70%;
+    overflow: scroll;
+    margin-top: 10%;
+  }
+
+  .playlist_header_information {
+    max-block-size: 320px;
+  }
 }
 
 @keyframes shadowCircle {

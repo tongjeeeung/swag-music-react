@@ -5,4 +5,4 @@ export const RegistrationPage: FC = () => (
   <main className="main">
     <Registration></Registration>
   </main>
-)
+);

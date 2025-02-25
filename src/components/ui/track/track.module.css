@@ -1,8 +1,10 @@
 .track {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   inline-size: 100%;
-  block-size: 3.8vw;
+  block-size: 5rem;
+  margin-block: 0.5%;
   text-wrap: nowrap;
   transition: background-color ease 0.5s;
 }
@@ -12,9 +14,38 @@
   transition: ease 0.5s;
 }
 
+.index {
+  font-size: 1.2rem;
+  color: var(--muted-color);
+  font-weight: 100;
+  inline-size: 28px;
+  text-align: center;
+}
+
+.image {
+  inline-size: 4rem;
+  block-size: 4rem;
+}
+
+.album {
+  font-weight: 100;
+  font-size: clamp(0.875rem, 0.743rem + 0.563vw, 1.25rem);
+  color: var(--muted-color);
+  text-decoration: none;
+  max-inline-size: 20vw;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: ease 0.5s;
+}
+
+.album:hover {
+  color: var(--accent-color);
+  transition: ease 0.5s;
+}
+
 .track_first {
   display: flex;
-  gap: 2%;
+  gap: 5%;
   align-items: center;
 }
 
@@ -39,7 +70,7 @@
 }
 
 .track_name {
-  width: 30vw;
+  width: 14vw;
   overflow: hidden;
   text-overflow: ellipsis;
   font-size: clamp(0.875rem, 0.743rem + 0.563vw, 1.25rem);
@@ -52,31 +83,7 @@
   font-weight: 300;
 }
 
-@media (width > 1440px) {
-  .track_name {
-    width: 310px;
-  }
-}
-
-@media (1440px > width >= 768px) {
-  .track {
-    block-size: 3.4vw;
-  }
-
-  .track_name {
-    width: 160px;
-  }
-}
-
 @media (width < 768px) {
-  .track {
-    block-size: 3.4vw;
-  }
-
-  .track_name {
-    width: 60px;
-  }
-
   .track_executor {
     max-width: 80px;
     overflow: hidden;

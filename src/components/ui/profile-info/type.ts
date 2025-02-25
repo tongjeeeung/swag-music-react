@@ -1,7 +1,7 @@
 import { MouseEventHandler } from "react";
 
 export type ProfileInfoUIProps = {
-  name: string,
-  email: string,
-  editHandle: MouseEventHandler,
-}
+  name: string;
+  email: string;
+  editHandle: MouseEventHandler;
+};

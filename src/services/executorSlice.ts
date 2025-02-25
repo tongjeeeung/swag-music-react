@@ -2,15 +2,19 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { TArtist } from "../utils/types";
 import { getAllExecutors, getExecutorById } from "../utils/api";
 
-export const getArtistsThunk = createAsyncThunk('executor/getArtistsApi', async () => {
-  return await getAllExecutors();
-});
+export const getArtistsThunk = createAsyncThunk(
+  "executor/getArtistsApi",
+  async () => {
+    return await getAllExecutors();
+  },
+);
 
-export const getArtistThunk = createAsyncThunk('executor/getArtistApi', 
+export const getArtistThunk = createAsyncThunk(
+  "executor/getArtistApi",
   async (id: string) => {
     return await getExecutorById(id);
-  }
-)
+  },
+);
 
 export interface executorState {
   isLoading: boolean;
@@ -21,11 +25,11 @@ export interface executorState {
 export const initialState: executorState = {
   isLoading: false,
   artists: [],
-  artist: null
-}
+  artist: null,
+};
 
 export const executorSlice = createSlice({
-  name: 'executor',
+  name: "executor",
   initialState,
   reducers: {},
   selectors: {
@@ -36,21 +40,22 @@ export const executorSlice = createSlice({
   extraReducers: (builder) => {
     builder.addCase(getArtistsThunk.pending, (state) => {
       state.isLoading = true;
-    })
+    });
     builder.addCase(getArtistsThunk.fulfilled, (state, { payload }) => {
       state.isLoading = false;
       state.artists = payload;
-    })
-    
+    });
+
     builder.addCase(getArtistThunk.pending, (state) => {
       state.isLoading = true;
-    })
+    });
     builder.addCase(getArtistThunk.fulfilled, (state, { payload }) => {
       state.isLoading = false;
-      state.artist = payload
-    })
-  }
-})
+      state.artist = payload;
+    });
+  },
+});
 
-export const { getExecutors, getIsLoading, getExecutor } = executorSlice.selectors;
+export const { getExecutors, getIsLoading, getExecutor } =
+  executorSlice.selectors;
 export const executor = executorSlice.reducer;

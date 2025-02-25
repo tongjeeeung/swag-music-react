@@ -1,5 +1,5 @@
 import { MouseEventHandler } from "react";
-import { TArtist, TPlaylist, TTrack } from "../../../utils/types"
+import { TArtist, TPlaylist, TTrack } from "../../../utils/types";
 
 export type ExecutorUIProps = {
   executor: TArtist;
@@ -7,4 +7,4 @@ export type ExecutorUIProps = {
   tracks: TTrack[];
   executors: TArtist[];
   listenHandle: MouseEventHandler;
-}
+};

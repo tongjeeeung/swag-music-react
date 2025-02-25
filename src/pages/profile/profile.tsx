@@ -1,7 +1,18 @@
-import { Profile } from "../../components"
+import { useEffect } from "react";
+import { Profile } from "../../components";
 
 export const ProfilePage = () => {
-  return (<main className="main">
-  <Profile></Profile>
-  </main>)
-}
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+  }, []);
+
+  return (
+    <main className="main">
+      <Profile></Profile>
+    </main>
+  );
+};

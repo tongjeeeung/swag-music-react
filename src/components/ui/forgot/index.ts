@@ -1,1 +1,1 @@
-export { ForgotUI } from './fotgot';
+export { ForgotUI } from "./fotgot";

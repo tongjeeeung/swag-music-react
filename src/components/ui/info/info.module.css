@@ -14,10 +14,10 @@
 }
 
 .title {
-  font-size: 46px;
+  font-size: clamp(0.7rem, 0.5rem + 3vw, 4rem);
   cursor: default;
   text-align: center;
-  font-family: 'Caveat';
+  font-family: "Caveat";
   text-shadow: 2px 1px 0 var(--shadow-color);
   font-weight: bold;
   transition: 0.3s;
@@ -26,14 +26,14 @@
 .text {
   margin: 0;
   padding: 1%;
-  font-size: 18px;
+  font-size: clamp(0.5rem, 0.25rem + 1vw, 3rem);
   word-spacing: 4px;
   letter-spacing: 0.5px;
   line-height: 1.2;
   text-align: justify;
 }
 
-.imgBox{ 
+.imgBox {
   position: relative;
   inline-size: 50vw;
   block-size: 90vh;
@@ -45,4 +45,28 @@
   block-size: 100%;
   object-fit: cover;
   object-position: center;
+}
+
+@media (1440px > width > 768px) {
+  .about {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .infoBox {
+    width: 100%;
+  }
+
+  .imgBox {
+    width: 100%;
+    block-size: 50vh;
+  }
+}
+
+@media (width <= 768px) {
+  .imgBox {
+    block-size: 50vh;
+  }
 }

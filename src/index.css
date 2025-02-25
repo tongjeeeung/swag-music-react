@@ -15,7 +15,7 @@ html {
 
 body {
   margin: 0;
-  font-family: 'NotoSans', serif;
+  font-family: "NotoSans", serif;
   width: 100%;
   height: 100%;
 }
@@ -29,7 +29,8 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+p {
   margin: 0;
 }
 
@@ -111,14 +112,16 @@ textarea {
 }
 
 button,
-input { /* 1 */
+input {
+  /* 1 */
   overflow: visible;
   border: none;
   background-color: transparent;
 }
 
 button,
-select { /* 1 */
+select {
+  /* 1 */
   text-transform: none;
 }
 

@@ -1,1 +1,1 @@
-export { InformationUI } from './info';
+export { InformationUI } from "./info";

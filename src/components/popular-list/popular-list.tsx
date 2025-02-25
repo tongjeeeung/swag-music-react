@@ -10,11 +10,43 @@ export const PopularList: FC = () => {
   const current = useSelector(getState);
 
   if (tracks.length > 0) {
-    return <>
-      <PopularListUI trackAutor={current.current.executor ? (current.current.executor) : (tracks[0].executor)} trackImage={current.current.image ? (current.current.image) : (tracks[0].image)} trackTitle={current.current.name ? (current.current.name) : (tracks[0].name)}>
-        {tracks.length > 0 ? (tracks.map((item) => (<Track name={item.name} executor={item.executor} duration={item.duration} _id={item._id} key={item._id} executorID={item.executorID} playlistID={item.albumId}></Track>))) : (<></>)}
-      </PopularListUI></>
+    return (
+      <>
+        <PopularListUI
+          trackAutor={
+            current.current.executor
+              ? current.current.executor
+              : tracks[0].executor
+          }
+          trackImage={
+            current.current.image ? current.current.image : tracks[0].image
+          }
+          trackTitle={
+            current.current.name ? current.current.name : tracks[0].name
+          }
+        >
+          {tracks.length > 0 ? (
+            tracks.map((item) => (
+              <Track
+                name={item.name}
+                executor={item.executor}
+                duration={item.duration}
+                _id={item._id}
+                key={item._id}
+                executorID={item.executorID}
+                playlistID={item.albumId}
+                imgUrl={item.image}
+                index={0}
+                albumName={item.albumName}
+              ></Track>
+            ))
+          ) : (
+            <></>
+          )}
+        </PopularListUI>
+      </>
+    );
   }
 
-  return null
-}
+  return null;
+};

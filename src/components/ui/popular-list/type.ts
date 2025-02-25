@@ -5,4 +5,4 @@ export type TPopularList = {
   trackTitle: string;
   trackAutor: string;
   children: ReactNode;
-}
+};

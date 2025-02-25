@@ -6,6 +6,6 @@ export type ProfileEditUIProps = {
   handleSubmit: (e: SyntheticEvent) => void;
   name: string;
   setName: Dispatch<SetStateAction<string>>;
-  avatar: string,
+  avatar: string;
   setAvatar: Dispatch<SetStateAction<string>>;
-}
+};

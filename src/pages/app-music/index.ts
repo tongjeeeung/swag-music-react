@@ -1,1 +1,1 @@
-export { AppMusic } from './app-music';
+export { AppMusic } from "./app-music";

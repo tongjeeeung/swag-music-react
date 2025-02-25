@@ -52,10 +52,12 @@
 
 .popular_track_list {
   width: 50vw;
+  max-block-size: 26rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
+  overflow: scroll;
   gap: 7px;
 }
 
@@ -85,15 +87,32 @@
   .popular_track_title {
     font-size: clamp(1rem, 0.727rem + 1.165vw, 2.125rem);
   }
-  
+
   .popular_track_autor {
     font-size: clamp(1rem, 0.727rem + 1.165vw, 2.125rem);
   }
+
+  .popular_track_list {
+    max-block-size: 35rem;
+  }
 }
 
-@media (width < 768px) {
+@media (1440px > width > 768px) {
+  .popular_track_list {
+    max-block-size: 20rem;
+  }
+}
+
+@media (width <= 768px) {
   .popular {
-    gap: 2%;
+    align-items: center;
+    gap: 5%;
+    flex-direction: column;
+    justify-content: start;
+  }
+
+  .popular_track {
+    margin-bottom: 5%;
   }
 
   .popular_track_info {
@@ -103,8 +122,14 @@
   .popular_track_title {
     font-size: clamp(1rem, 0.727rem + 1.165vw, 2.125rem);
   }
-  
+
   .popular_track_autor {
     font-size: clamp(1rem, 0.727rem + 1.165vw, 2.125rem);
+  }
+
+  .popular_track_list {
+    width: 100%;
+    max-block-size: 100%;
+    overflow: visible;
   }
 }

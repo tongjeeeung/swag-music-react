@@ -1,1 +1,1 @@
-export { Forgot } from './fotgot';
+export { Forgot } from "./fotgot";

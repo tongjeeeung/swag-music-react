@@ -3,4 +3,5 @@ export type TPlaylistItem = {
   executor: string;
   image: string;
   id: string;
-}
+  executorId: string;
+};

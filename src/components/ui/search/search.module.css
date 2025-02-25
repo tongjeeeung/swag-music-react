@@ -38,13 +38,17 @@
   font-weight: 100;
   display: flex;
   justify-content: space-between;
-  transition: border, color 0.3s ease-in;
+  transition:
+    border,
+    color 0.3s ease-in;
 }
 
 .item:hover {
   color: var(--accent-color);
   border-bottom: 1px solid var(--accent-color);
-  transition: border, color 0.3s ease-in;
+  transition:
+    border,
+    color 0.3s ease-in;
 }
 
 .value {
@@ -62,6 +66,6 @@ input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
-    transition: 5000s ease-in-out 0s;
-    color: var(--text-color);
+  transition: 5000s ease-in-out 0s;
+  color: var(--text-color);
 }

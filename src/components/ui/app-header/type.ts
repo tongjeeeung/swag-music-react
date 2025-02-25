@@ -5,4 +5,4 @@ export type TAppHeaderUIProps = {
   userAvatar: string | undefined;
   thremeVoid: MouseEventHandler;
   logOutHandle: MouseEventHandler;
-}
+};

@@ -10,7 +10,7 @@
   padding-bottom: 2%;
   font-size: 42px;
   letter-spacing: 2vw;
-  font-family: 'Caveat';
+  font-family: "Caveat";
   text-shadow: 3px 3px 3px var(--shadow-color);
   cursor: default;
 }
@@ -74,6 +74,6 @@ input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
-    transition: 5000s ease-in-out 0s;
-    color: var(--text-color);
+  transition: 5000s ease-in-out 0s;
+  color: var(--text-color);
 }

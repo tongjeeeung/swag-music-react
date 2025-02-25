@@ -5,8 +5,8 @@ import { useDispatch } from "../../services/store";
 import { loginUserThunk } from "../../services/userSlice";
 
 export const Login: FC = () => {
-  const [email, setEmail] = useState<string>('');
-  const [password, setPassword] = useState<string>('');
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -14,8 +14,16 @@ export const Login: FC = () => {
   const handleSubmit = (e: SyntheticEvent) => {
     e.preventDefault();
     dispatch(loginUserThunk({ email, password }));
-    navigate('/home');
-  }
+    navigate("/swag-music-react/home");
+  };
 
-  return (<LoginUI email={email} password={password} setEmail={setEmail} setPassword={setPassword} handleSubmit={handleSubmit}></LoginUI>)
-}
+  return (
+    <LoginUI
+      email={email}
+      password={password}
+      setEmail={setEmail}
+      setPassword={setPassword}
+      handleSubmit={handleSubmit}
+    ></LoginUI>
+  );
+};

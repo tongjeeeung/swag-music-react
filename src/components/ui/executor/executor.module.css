@@ -34,18 +34,17 @@
 .name {
   font-size: 8vw;
   font-weight: bold;
-  margin-top: 2%;
   margin-bottom: 50px;
 }
 
 .title {
-  inline-size: 58vw;
+  inline-size: 95%;
   font-size: 34px;
   font-weight: 100;
-  overflow: hidden;
-  text-wrap: nowrap;
-  text-overflow: ellipsis;
-  color: var(--muted-color);
+  word-spacing: 4px;
+  letter-spacing: 0.5px;
+  line-height: 1.2;
+  color: var(--text-color);
   margin: 0 0 6% 0;
 }
 
@@ -145,4 +144,15 @@
   font-size: 14px;
   font-weight: 300;
   color: var(--muted-color);
+}
+
+@media (1440px > width > 768px) {
+  .logo {
+    block-size: 25vh;
+  }
+
+  .button {
+    inline-size: 33vw;
+    block-size: 3vh;
+  }
 }

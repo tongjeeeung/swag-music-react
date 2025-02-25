@@ -1,1 +1,1 @@
-export { SearchUI } from './search';
+export { SearchUI } from "./search";

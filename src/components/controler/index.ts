@@ -1,1 +1,1 @@
-export { Controler } from './controler';
+export { Controler } from "./controler";

@@ -1,1 +1,1 @@
-export { ArticleHeaderUI } from './article-header'
+export { ArticleHeaderUI } from "./article-header";

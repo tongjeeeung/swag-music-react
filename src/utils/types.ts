@@ -4,7 +4,8 @@ export type TArtist = {
   about: string;
   playlists: TPlaylist[];
   _id: string;
-}
+  allAuditions: number;
+};
 
 export type TPlaylist = {
   _id: string;
@@ -15,7 +16,7 @@ export type TPlaylist = {
   tracks: TTrack[];
   executorImg?: string;
   executorID?: string;
-}
+};
 
 export type TTrack = {
   _id: string;
@@ -27,8 +28,9 @@ export type TTrack = {
   isLike: boolean;
   auditions: number;
   albumId: string;
+  albumName: string;
   executorID: string;
-}
+};
 
 export type TUser = {
   name: string;
@@ -37,10 +39,11 @@ export type TUser = {
   avatar: string;
   addedPlaylists: string[];
   likedTracks: string[];
+  likedPlaylist: TPlaylist;
   password: string;
   accessToken: string;
   refreshToken: string;
-}
+};
 
 export type TBlog = {
   _id: string;
@@ -49,4 +52,4 @@ export type TBlog = {
   subtitle?: string;
   image: string;
   image_2?: string;
-}
+};

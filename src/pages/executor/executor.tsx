@@ -11,10 +11,18 @@ export const ExecutorPage: FC = () => {
   const executorID = useParams();
 
   useEffect(() => {
-    dispatch(getArtistThunk(`${executorID.id}`))
-  }, [executorID.id])
+    dispatch(getArtistThunk(`${executorID.id}`));
 
-  return <main className="main">{isLoading ? (<Preloader></Preloader>) : (
-    <Executor></Executor>
-  )}</main>
-}
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+  }, [executorID.id]);
+
+  return (
+    <main className="main">
+      {isLoading ? <Preloader></Preloader> : <Executor></Executor>}
+    </main>
+  );
+};

@@ -1,65 +1,77 @@
 import { getCookie } from "./cookie.ts";
 import { TArtist, TPlaylist, TUser, TTrack, TBlog } from "./types";
-import axios from 'axios';
+import axios from "axios";
 
 const API_URL = 'https://swag-music-react.onrender.com';
 
 export const logOutApi = () => {
-  console.log('logOut')
-}
+  console.log("logOut");
+};
 
 export const getCurrentApi = () => {
-  const current = localStorage.getItem('current');
+  const current = localStorage.getItem("current");
   if (current) {
     const currents = JSON.parse(current);
     currents.playing = false;
     currents.current = {
-      name: '',
-      executor: '',
-      image: '',
-      url: '',
-      duration: '',
+      name: "",
+      executor: "",
+      image: "",
+      url: "",
+      duration: "",
       isLike: false,
-      _id: '',
-      albumId: '',
+      _id: "",
+      albumId: "",
     };
     return currents;
-  }
-  else return {
-    current: {
-      name: '',
-      executor: '',
-      image: '',
-      url: '',
-      duration: '',
-      isLike: false,
-      _id: '',
-      albumId: '',
-    },
-    playing: false,
-    repeating: false,
-    shuffle: false,
-    volume: 0.4,
-    lastvolume: 0,
-    threme: 'default',
-  }
-}
+  } else
+    return {
+      current: {
+        name: "",
+        executor: "",
+        image: "",
+        url: "",
+        duration: "",
+        isLike: false,
+        _id: "",
+        albumId: "",
+      },
+      playing: false,
+      repeating: false,
+      shuffle: false,
+      volume: 0.4,
+      lastvolume: 0,
+      threme: "default",
+    };
+};
 
-export const registerUser = async (name: string, email: string, password: string) => {
+export const registerUser = async (
+  name: string,
+  email: string,
+  password: string,
+) => {
   const avatar = "/swag-music-react/static/images/default/avatar.jpg";
-  const response = await axios.post(`${API_URL}/user/register`, { name, email, password, avatar });
+  const response = await axios.post(`${API_URL}/user/register`, {
+    name,
+    email,
+    password,
+    avatar,
+  });
   return response.data;
 };
 
 export const loginUser = async (email: string, password: string) => {
-  const response = await axios.post(`${API_URL}/user/login`, { email, password });
+  const response = await axios.post(`${API_URL}/user/login`, {
+    email,
+    password,
+  });
   return response.data;
 };
 
 export const getUserInfo = async () => {
-  const token = getCookie('accessToken');
+  const token = getCookie("accessToken");
   if (!token) {
-    throw new Error('Токен не найден');
+    throw new Error("Токен не найден");
   }
   const response = await axios.get(`${API_URL}/user`, {
     headers: {
@@ -75,41 +87,52 @@ export interface UpdateProfilePayload {
   email?: string;
 }
 
-export const updateProfile = async (payload: UpdateProfilePayload): Promise<TUser> => {
-  const token = getCookie('accessToken');
+export const updateProfile = async (
+  payload: UpdateProfilePayload,
+): Promise<TUser> => {
+  const token = getCookie("accessToken");
   if (!token) {
-    throw new Error('Токен не найден');
+    throw new Error("Токен не найден");
   }
 
   try {
-    const response = await axios.put(`${API_URL}/user/update-profile`, payload, {
-      headers: {
-        Authorization: `Bearer ${token}`,
+    const response = await axios.put(
+      `${API_URL}/user/update-profile`,
+      payload,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
       },
-    });
+    );
     return response.data.user;
   } catch (error) {
     if (axios.isAxiosError(error)) {
-      throw new Error(error.response?.data?.message || 'Ошибка при обновлении профиля');
+      throw new Error(
+        error.response?.data?.message || "Ошибка при обновлении профиля",
+      );
     } else {
-      throw new Error('Неизвестная ошибка');
+      throw new Error("Неизвестная ошибка");
     }
   }
 };
 
 export const changePassword = async (email: string, newPassword: string) => {
-  const response = await axios.put(`${API_URL}/change-password`, { email, newPassword });
+  const response = await axios.put(`${API_URL}/change-password`, {
+    email,
+    newPassword,
+  });
   return response.data;
 };
 
 // Получение массива лайкнутых треков
 export const fetchLikedTracks = async (): Promise<string[]> => {
-  const token = getCookie('accessToken');
+  const token = getCookie("accessToken");
   if (!token) {
-    throw new Error('Токен не найден');
+    throw new Error("Токен не найден");
   }
 
-  const response = await axios.get('/user/liked-tracks', {
+  const response = await axios.get("/user/liked-tracks", {
     headers: {
       Authorization: `Bearer ${token}`,
     },
@@ -120,9 +143,9 @@ export const fetchLikedTracks = async (): Promise<string[]> => {
 
 // Добавление или удаление лайкнутого трека
 export const toggleLikeTrack = async (trackId: string): Promise<string[]> => {
-  const token = getCookie('accessToken');
+  const token = getCookie("accessToken");
   if (!token) {
-    throw new Error('Токен не найден');
+    throw new Error("Токен не найден");
   }
 
   const response = await axios.post(
@@ -132,20 +155,20 @@ export const toggleLikeTrack = async (trackId: string): Promise<string[]> => {
       headers: {
         Authorization: `Bearer ${token}`,
       },
-    }
+    },
   );
 
-  return response.data.likedTracks;
+  return response.data;
 };
 
 // Получение массива плейлистов пользователя
 export const fetchUserPlaylists = async (): Promise<string[]> => {
-  const token = getCookie('accessToken');
+  const token = getCookie("accessToken");
   if (!token) {
-    throw new Error('Токен не найден');
+    throw new Error("Токен не найден");
   }
 
-  const response = await axios.get('/user/playlists', {
+  const response = await axios.get("/user/playlists", {
     headers: {
       Authorization: `Bearer ${token}`,
     },
@@ -155,10 +178,12 @@ export const fetchUserPlaylists = async (): Promise<string[]> => {
 };
 
 // Добавление или удаление плейлиста
-export const toggleAddedPlaylist = async (playlistId: string): Promise<string[]> => {
-  const token = getCookie('accessToken');
+export const toggleAddedPlaylist = async (
+  playlistId: string,
+): Promise<string[]> => {
+  const token = getCookie("accessToken");
   if (!token) {
-    throw new Error('Токен не найден');
+    throw new Error("Токен не найден");
   }
 
   const response = await axios.post(
@@ -168,7 +193,7 @@ export const toggleAddedPlaylist = async (playlistId: string): Promise<string[]>
       headers: {
         Authorization: `Bearer ${token}`,
       },
-    }
+    },
   );
 
   return response.data.addedPlaylists;
@@ -186,53 +211,71 @@ export const getAllPlaylists = async (): Promise<TPlaylist[]> => {
     return response.data;
   } catch (error) {
     if (axios.isAxiosError(error)) {
-      throw new Error(error.response?.data?.message || 'Ошибка при получении плейлистов');
+      throw new Error(
+        error.response?.data?.message || "Ошибка при получении плейлистов",
+      );
     } else {
-      throw new Error('Неизвестная ошибка при получении плейлистов');
+      throw new Error("Неизвестная ошибка при получении плейлистов");
     }
   }
 };
 
 // Получение плейлиста по ID.
-export const getPlaylistById = async (id: string): Promise<TPlaylist> => {
+export const getPlaylistById = async (
+  id: string,
+  userId: string,
+): Promise<TPlaylist> => {
   try {
-    const response = await axios.get(`${API_URL}/playlists/${id}`);
+    // Передача userId как параметра запроса
+    const response = await axios.get(`${API_URL}/playlists/${id}`, {
+      params: { userId },
+    });
     return response.data;
   } catch (error) {
     if (axios.isAxiosError(error)) {
-      throw new Error(error.response?.data?.message || 'Ошибка при получении плейлиста');
+      throw new Error(
+        error.response?.data?.message || "Ошибка при получении плейлиста",
+      );
     } else {
-      throw new Error('Неизвестная ошибка при получении плейлиста');
+      throw new Error("Неизвестная ошибка при получении плейлиста");
     }
   }
 };
 
 // Получение плейлистов по массиву ID.
-export const getPlaylistsByIds = async (ids: string[]): Promise<TPlaylist[]> => {
+export const getPlaylistsByIds = async (
+  ids: string[],
+): Promise<TPlaylist[]> => {
   try {
     const response = await axios.post(`${API_URL}/playlists/by-ids`, { ids });
     return response.data;
   } catch (error) {
     if (axios.isAxiosError(error)) {
-      throw new Error(error.response?.data?.message || 'Ошибка при получении плейлистов');
+      throw new Error(
+        error.response?.data?.message || "Ошибка при получении плейлистов",
+      );
     } else {
-      throw new Error('Неизвестная ошибка при получении плейлистов');
+      throw new Error("Неизвестная ошибка при получении плейлистов");
     }
   }
 };
 
 // Поиск трека по ID во всех плейлистах
-export const searchTrackById = async (trackId: string): Promise<{track: TTrack;
-  playlist: TPlaylist}> => {
+export const searchTrackById = async (
+  trackId: string,
+): Promise<{ track: TTrack; playlist: TPlaylist }> => {
   try {
-    const response = await axios.get<{track: TTrack;
-      playlist: TPlaylist;}>(`${API_URL}/search-track?trackId=${trackId}`);
+    const response = await axios.get<{ track: TTrack; playlist: TPlaylist }>(
+      `${API_URL}/search-track?trackId=${trackId}`,
+    );
     return response.data;
   } catch (error) {
     if (axios.isAxiosError(error)) {
-      throw new Error(error.response?.data?.message || 'Ошибка при получении трека');
+      throw new Error(
+        error.response?.data?.message || "Ошибка при получении трека",
+      );
     } else {
-      throw new Error('Неизвестная ошибка при получении трека');
+      throw new Error("Неизвестная ошибка при получении трека");
     }
   }
 };
@@ -244,9 +287,11 @@ export const getAllExecutors = async (): Promise<TArtist[]> => {
     return response.data;
   } catch (error) {
     if (axios.isAxiosError(error)) {
-      throw new Error(error.response?.data?.message || 'Ошибка при получении исполнителей');
+      throw new Error(
+        error.response?.data?.message || "Ошибка при получении исполнителей",
+      );
     } else {
-      throw new Error('Неизвестная ошибка при получении исполнителей');
+      throw new Error("Неизвестная ошибка при получении исполнителей");
     }
   }
 };
@@ -258,23 +303,30 @@ export const getExecutorById = async (id: string): Promise<TArtist> => {
     return response.data;
   } catch (error) {
     if (axios.isAxiosError(error)) {
-      throw new Error(error.response?.data?.message || 'Ошибка при получении исполнителя');
+      throw new Error(
+        error.response?.data?.message || "Ошибка при получении исполнителя",
+      );
     } else {
-      throw new Error('Неизвестная ошибка при получении исполнителя');
+      throw new Error("Неизвестная ошибка при получении исполнителя");
     }
   }
 };
 
 // Получение popular.
-export const getPopularApi = async (): Promise<{topTracks: TTrack[], popularPlaylists: TPlaylist[]}> => {
+export const getPopularApi = async (): Promise<{
+  topTracks: TTrack[];
+  popularPlaylists: TPlaylist[];
+}> => {
   try {
     const response = await axios.get(`${API_URL}/popular`);
     return response.data;
   } catch (error) {
     if (axios.isAxiosError(error)) {
-      throw new Error(error.response?.data?.message || 'Ошибка при получении популярных');
+      throw new Error(
+        error.response?.data?.message || "Ошибка при получении популярных",
+      );
     } else {
-      throw new Error('Неизвестная ошибка при получении популярных');
+      throw new Error("Неизвестная ошибка при получении популярных");
     }
   }
 };
@@ -286,9 +338,11 @@ export const getArticleById = async (id: string): Promise<TBlog> => {
     return response.data;
   } catch (error) {
     if (axios.isAxiosError(error)) {
-      throw new Error(error.response?.data?.message || 'Ошибка при получении статьи');
+      throw new Error(
+        error.response?.data?.message || "Ошибка при получении статьи",
+      );
     } else {
-      throw new Error('Неизвестная ошибка при получении статьи');
+      throw new Error("Неизвестная ошибка при получении статьи");
     }
   }
 };
@@ -300,73 +354,96 @@ export const getArticlesApi = async (): Promise<TBlog[]> => {
     return response.data;
   } catch (error) {
     if (axios.isAxiosError(error)) {
-      throw new Error(error.response?.data?.message || 'Ошибка при получении блога');
+      throw new Error(
+        error.response?.data?.message || "Ошибка при получении блога",
+      );
     } else {
-      throw new Error('Неизвестная ошибка при получении блога');
+      throw new Error("Неизвестная ошибка при получении блога");
     }
   }
 };
 
-export const postNewUserPlaylist = async (userId: string, playlist: TPlaylist): Promise<{message: string, playlist: TPlaylist}> => {
+export const postNewUserPlaylist = async (
+  userId: string,
+  playlist: TPlaylist,
+): Promise<{ message: string; playlist: TPlaylist }> => {
   try {
     const formData = new FormData();
-    formData.append('userId', userId);
-    formData.append('name', playlist.name);
-    formData.append('info', playlist.information);
-    formData.append('image', playlist.image);
-    formData.append('userName', playlist.executor);
-    formData.append('tracks', JSON.stringify(playlist.tracks));
+    formData.append("userId", userId);
+    formData.append("name", playlist.name);
+    formData.append("info", playlist.information);
+    formData.append("image", playlist.image);
+    formData.append("userName", playlist.executor);
+    formData.append("tracks", JSON.stringify(playlist.tracks));
 
     const response = await axios.post(`${API_URL}/playlists/create`, formData, {
       headers: {
-        'Content-Type': 'multipart/form-data'
-      }
+        "Content-Type": "multipart/form-data",
+      },
     });
     return response.data;
   } catch (error) {
     if (axios.isAxiosError(error)) {
-      throw new Error(error.response?.data?.message || 'Ошибка при добавлении плейлиста');
+      throw new Error(
+        error.response?.data?.message || "Ошибка при добавлении плейлиста",
+      );
     } else {
-      throw new Error('Неизвестная ошибка при добавлении плейлиста');
+      throw new Error("Неизвестная ошибка при добавлении плейлиста");
     }
   }
 };
 
-export const putUpdatePlaylist = async (userId: string, playlist: TPlaylist): Promise<{message: string, playlist: TPlaylist}> => {
+export const putUpdatePlaylist = async (
+  userId: string,
+  playlist: TPlaylist,
+): Promise<{ message: string; playlist: TPlaylist }> => {
   try {
     const formData = new FormData();
-    formData.append('userId', userId);
-    formData.append('name', playlist.name);
-    formData.append('info', playlist.information);
-    formData.append('image', playlist.image);
-    formData.append('tracks', JSON.stringify(playlist.tracks));
-    
-    const response = await fetch(`${API_URL}/playlists/create/${playlist._id}`, {
-      method: 'PUT',
-      body: formData,
-    });
+    formData.append("userId", userId);
+    formData.append("name", playlist.name);
+    formData.append("info", playlist.information);
+    formData.append("image", playlist.image);
+    formData.append("tracks", JSON.stringify(playlist.tracks));
+
+    const response = await fetch(
+      `${API_URL}/playlists/create/${playlist._id}`,
+      {
+        method: "PUT",
+        body: formData,
+      },
+    );
     const updatedPlaylist = await response.json();
     return updatedPlaylist;
   } catch (error) {
     if (axios.isAxiosError(error)) {
-      throw new Error(error.response?.data?.message || 'Ошибка при обновлении плейлиста');
+      throw new Error(
+        error.response?.data?.message || "Ошибка при обновлении плейлиста",
+      );
     } else {
-      throw new Error('Неизвестная ошибка при обновлении плейлиста');
+      throw new Error("Неизвестная ошибка при обновлении плейлиста");
     }
   }
 };
 
-export const deleteUserPlaylist = async (userId: string, playlistId: string) => {
+export const deleteUserPlaylist = async (
+  userId: string,
+  playlistId: string,
+) => {
   try {
-    const response = await axios.delete(`${API_URL}/playlists/delete/${playlistId}`, {
-      data: { userId }
-    });
+    const response = await axios.delete(
+      `${API_URL}/playlists/delete/${playlistId}`,
+      {
+        data: { userId },
+      },
+    );
     return response.data;
   } catch (error) {
     if (axios.isAxiosError(error)) {
-      throw new Error(error.response?.data?.message || 'Ошибка при удалении плейлиста');
+      throw new Error(
+        error.response?.data?.message || "Ошибка при удалении плейлиста",
+      );
     } else {
-      throw new Error('Неизвестная ошибка при удалении плейлиста');
+      throw new Error("Неизвестная ошибка при удалении плейлиста");
     }
   }
-}
+};

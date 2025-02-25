@@ -1,1 +1,1 @@
-export { LikeButton } from './like-button';
+export { LikeButton } from "./like-button";

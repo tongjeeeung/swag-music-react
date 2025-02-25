@@ -8,4 +8,4 @@ export type RegistrationUIProps = {
   handleSubmit: (e: SyntheticEvent) => void;
   password: string;
   setPassword: Dispatch<SetStateAction<string>>;
-}
+};

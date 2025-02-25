@@ -5,7 +5,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-block-end: 2%;
+  margin-block-end: 5%;
 }
 
 .playlist_item_image {
@@ -23,8 +23,13 @@
 }
 
 .playlist_item_title {
+  max-inline-size: 220px;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  text-wrap: nowrap;
   margin-block: 2%;
-  font-size: clamp(0.875rem, 0.743rem + 0.563vw, 1.25rem);
+  text-align: center;
+  font-size: clamp(0.875rem, 0.743rem + 0.563vw, 1rem);
 }
 
 .playlist_item_executor {
@@ -32,4 +37,10 @@
   font-weight: 100;
   color: var(--muted-color);
   font-size: clamp(0.688rem, 0.621rem + 0.282vw, 0.875rem);
+  transition: ease 0.3s;
+}
+
+.playlist_item_executor:hover {
+  color: var(--accent-color);
+  transition: all ease 0.3s;
 }

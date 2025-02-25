@@ -1,6 +1,6 @@
 import { FC, useEffect, useRef } from "react";
-import styles from './modal.module.css';
-import { TModal } from './type';
+import styles from "./modal.module.css";
+import { TModal } from "./type";
 import clsx from "clsx";
 
 export const ModalUI: FC<TModal> = ({ children, onClose }) => {
@@ -8,7 +8,7 @@ export const ModalUI: FC<TModal> = ({ children, onClose }) => {
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (modalRef.current === event.target as Node) {
+      if (modalRef.current === (event.target as Node)) {
         onClose();
       }
     };
@@ -22,7 +22,10 @@ export const ModalUI: FC<TModal> = ({ children, onClose }) => {
   }, [onClose]);
 
   return (
-    <div className={clsx(styles.modal, styles.modal_animated, styles.modal_opened)} ref={modalRef}>
+    <div
+      className={clsx(styles.modal, styles.modal_animated, styles.modal_opened)}
+      ref={modalRef}
+    >
       {children}
     </div>
   );

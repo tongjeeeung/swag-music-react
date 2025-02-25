@@ -2,7 +2,7 @@
   padding: 1%;
   block-size: 13%;
   inline-size: 98%;
-  background-color: rgba(0, 0, 0, .5);
+  background-color: rgba(0, 0, 0, 0.5);
   display: none;
   justify-content: space-between;
   position: fixed;
@@ -34,11 +34,10 @@
 
 .info {
   max-width: 20vw;
-  block-size: 6vh;
+  block-size: 8vh;
   width: 12vw;
   display: flex;
   flex-direction: column;
-  gap: 5px;
   text-wrap: nowrap;
   position: relative;
   overflow: hidden;
@@ -96,7 +95,7 @@
   z-index: 9;
 }
 
-.volume_range{
+.volume_range {
   inline-size: 100px;
   block-size: 5px;
   background-color: var(--muted-color);
@@ -217,12 +216,12 @@
     block-size: 3vh;
     gap: 2px;
   }
-  
+
   .title {
     font-size: 11px;
     font-weight: 600;
   }
-  
+
   .executor {
     font-size: 10px;
   }
@@ -242,7 +241,11 @@
     block-size: 32px;
   }
 
-  .menu .shuffle-svg, .prev-svg, .play-svg, .next-svg, .repeat-svg {
+  .menu .shuffle-svg,
+  .prev-svg,
+  .play-svg,
+  .next-svg,
+  .repeat-svg {
     inline-size: 18px;
     block-size: 18px;
   }
@@ -263,4 +266,4 @@
   .progress {
     height: 8px;
   }
-} 
+}

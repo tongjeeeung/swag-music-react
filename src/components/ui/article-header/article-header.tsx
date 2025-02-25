@@ -1,8 +1,14 @@
 import { FC } from "react";
-import styles from './article-header.module.css';
+import styles from "./article-header.module.css";
 import { TArticleHeaderProps } from "./type";
 
-export const ArticleHeaderUI: FC<TArticleHeaderProps> = ({name, titleFir, titleSec, imgFir, imgSec}) => (
+export const ArticleHeaderUI: FC<TArticleHeaderProps> = ({
+  name,
+  titleFir,
+  titleSec,
+  imgFir,
+  imgSec,
+}) => (
   <div className={styles.columns}>
     <div className={styles.column_1}>
       <img className={styles.image} src={imgFir} />

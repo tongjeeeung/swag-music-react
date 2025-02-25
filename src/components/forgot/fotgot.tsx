@@ -5,8 +5,8 @@ import { changePasswordThunk } from "../../services/userSlice";
 import { ForgotUI } from "../ui";
 
 export const Forgot: FC = () => {
-  const [email, setEmail] = useState<string>('');
-  const [password, setPassword] = useState<string>('');
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -14,10 +14,16 @@ export const Forgot: FC = () => {
   const handleSubmit = (e: SyntheticEvent) => {
     e.preventDefault();
     dispatch(changePasswordThunk({ email, password }));
-    navigate('/login');
-  }
+    navigate("/swag-music-react/login");
+  };
 
   return (
-    <ForgotUI email={email} setEmail={setEmail} password={password} setPassword={setPassword} handleSubmit={handleSubmit}></ForgotUI>
+    <ForgotUI
+      email={email}
+      setEmail={setEmail}
+      password={password}
+      setPassword={setPassword}
+      handleSubmit={handleSubmit}
+    ></ForgotUI>
   );
 };

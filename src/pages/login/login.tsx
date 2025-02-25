@@ -5,4 +5,4 @@ export const LoginPage: FC = () => (
   <main className="main">
     <Login></Login>
   </main>
-)
+);

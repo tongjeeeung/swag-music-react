@@ -1,9 +1,15 @@
 import { FC } from "react";
-import styles from './popular-track.module.css';
-import { TPopularTrack } from './type';
+import styles from "./popular-track.module.css";
+import { TPopularTrack } from "./type";
 import { LikeButton, PlayButton } from "../buttons";
 
-export const PopularTrackUI: FC<TPopularTrack> = ({ executor, name, duration, likeVoid, playVoid }) => (
+export const PopularTrackUI: FC<TPopularTrack> = ({
+  executor,
+  name,
+  duration,
+  likeVoid,
+  playVoid,
+}) => (
   <li className={styles.popular_item}>
     <div className={styles.popular_track_first}>
       <PlayButton playVoid={playVoid} isPlaying={false}></PlayButton>
@@ -16,4 +22,4 @@ export const PopularTrackUI: FC<TPopularTrack> = ({ executor, name, duration, li
       <span className={styles.popular_duration}>{duration}</span>
     </div>
   </li>
-)
+);

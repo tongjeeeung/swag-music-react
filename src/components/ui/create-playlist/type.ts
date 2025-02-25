@@ -13,8 +13,8 @@ export type CreateIUProps = {
   image: File | string;
   setImage: Dispatch<SetStateAction<File | string>>;
   handleDeletePlaylist?(): void;
-  id?: string
-}
+  id?: string;
+};
 
 export type SearchFunction = (searchElement: string) => TTrack[];
 export type CachedFunction = (n: string) => TTrack[];

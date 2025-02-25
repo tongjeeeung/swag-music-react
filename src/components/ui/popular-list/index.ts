@@ -1,1 +1,1 @@
-export { PopularListUI } from './popular-list';
+export { PopularListUI } from "./popular-list";

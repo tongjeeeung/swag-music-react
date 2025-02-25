@@ -4,4 +4,4 @@ export type TArticleHeaderProps = {
   titleSec: string;
   imgFir: string;
   imgSec: string;
-}
+};

@@ -1,1 +1,1 @@
-export { ControlerUI } from './controler';
+export { ControlerUI } from "./controler";
