@@ -1,0 +1,74 @@
+<svg width="28" height="64" xmlns="http://www.w3.org/2000/svg" class="my-svg">
+    <style>
+        .base-line {
+            stroke-width: 4;
+            stroke: currentColor;
+        }
+        .wave-line {
+            stroke-width: 2;
+            stroke: currentColor;
+        }
+    </style>
+    
+    <line class="base-line" x1="7" y1="32" x2="21" y2="32" />
+    
+    <line class="wave-line" x1="7" y1="32" x2="7" y2="32">
+        <animate attributeName="y2" values="32;50;32;10;32" dur="1.5s" repeatCount="indefinite" begin="0s" />
+    </line>
+    
+    <line class="wave-line" x1="8" y1="32" x2="8" y2="32">
+        <animate attributeName="y2" values="32;45;32;15;32" dur="1.5s" repeatCount="indefinite" begin="0.2s" />
+    </line>
+    
+    <line class="wave-line" x1="9" y1="32" x2="9" y2="32">
+        <animate attributeName="y2" values="32;42;32;12;32" dur="1.5s" repeatCount="indefinite" begin="0.4s" />
+    </line>
+
+    <line class="wave-line" x1="10" y1="32" x2="10" y2="32">
+        <animate attributeName="y2" values="32;40;32;10;32" dur="1.5s" repeatCount="indefinite" begin="0.6s" />
+    </line>
+
+    <line class="wave-line" x1="11" y1="32" x2="11" y2="32">
+        <animate attributeName="y2" values="32;38;32;12;32" dur="1.5s" repeatCount="indefinite" begin="0.8s" />
+    </line>
+
+    <line class="wave-line" x1="12" y1="32" x2="12" y2="32">
+        <animate attributeName="y2" values="32;38;32;12;32" dur="1.5s" repeatCount="indefinite" begin="1s" />
+    </line>
+    
+    <line class="wave-line" x1="13" y1="32" x2="13" y2="32">
+        <animate attributeName="y2" values="32;38;32;12;32" dur="1.5s" repeatCount="indefinite" begin="1.2s" />
+    </line>
+    
+    <line class="wave-line" x1="14" y1="32" x2="14" y2="32">
+        <animate attributeName="y2" values="32;40;32;10;32" dur="1.5s" repeatCount="indefinite" begin="1.4s" />
+    </line>
+    
+    <line class="wave-line" x1="15" y1="32" x2="15" y2="32">
+        <animate attributeName="y2" values="32;42;32;12;32" dur="1.5s" repeatCount="indefinite" begin="1.6s" />
+    </line>
+    
+    <line class="wave-line" x1="16" y1="32" x2="16" y2="32">
+        <animate attributeName="y2" values="32;45;32;15;32" dur="1.5s" repeatCount="indefinite" begin="1.8s" />
+    </line>
+    
+    <line class="wave-line" x1="17" y1="32" x2="17" y2="32">
+        <animate attributeName="y2" values="32;50;32;20;32" dur="1.5s" repeatCount="indefinite" begin="2s" />
+    </line>
+    
+    <line class="wave-line" x1="18" y1="32" x2="18" y2="32">
+        <animate attributeName="y2" values="32;45;32;15;32" dur="1.5s" repeatCount="indefinite" begin="2.2s" />
+    </line>
+    
+    <line class="wave-line" x1="19" y1="32" x2="19" y2="32">
+        <animate attributeName="y2" values="32;42;32;12;32" dur="1.5s" repeatCount="indefinite" begin="2.4s" />
+    </line>
+    
+    <line class="wave-line" x1="20" y1="32" x2="20" y2="32">
+        <animate attributeName="y2" values="32;40;32;10;32" dur="1.5s" repeatCount="indefinite" begin="2.6s" />
+    </line>
+    
+    <line class="wave-line" x1="21" y1="32" x2="21" y2="32">
+        <animate attributeName="y2" values="32;37;32;7;32" dur="1.5s" repeatCount="indefinite" begin="2.8s" />
+    </line>
+</svg>
